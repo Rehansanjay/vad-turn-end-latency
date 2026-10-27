@@ -1,0 +1,250 @@
+{
+  "vad": {
+    "model": "silero_vad.onnx (livekit-plugins-silero)",
+    "activation_threshold": 0.5,
+    "deactivation_threshold": 0.35,
+    "min_speech_duration": 0.05,
+    "min_silence_duration": 0.55,
+    "sample_rate": 16000
+  },
+  "control_windows_s": {
+    "primary": 5.0,
+    "background": 3.0
+  },
+  "clips": [
+    {
+      "file": "bystander_000_off.mp3",
+      "duration_s": 13.98,
+      "events": 2,
+      "speech_s": 12.58,
+      "speech_fraction": 0.899,
+      "turn_end_s": 13.98,
+      "segments": [
+        [
+          0.42,
+          10.14
+        ],
+        [
+          11.14,
+          13.98
+        ]
+      ],
+      "rms_overall": 0.05337,
+      "rms_primary_window": 0.06318,
+      "rms_background_window": 0.03374
+    },
+    {
+      "file": "bystander_000_on.mp3",
+      "duration_s": 13.98,
+      "events": 1,
+      "speech_s": 9.38,
+      "speech_fraction": 0.67,
+      "turn_end_s": 9.79,
+      "segments": [
+        [
+          0.42,
+          9.79
+        ]
+      ],
+      "rms_overall": 0.03971,
+      "rms_primary_window": 0.04716,
+      "rms_background_window": 0.00013
+    },
+    {
+      "file": "tail_024_off.mp3",
+      "duration_s": 11.97,
+      "events": 1,
+      "speech_s": 11.65,
+      "speech_fraction": 0.973,
+      "turn_end_s": 11.97,
+      "segments": [
+        [
+          0.32,
+          11.97
+        ]
+      ],
+      "rms_overall": 0.05288,
+      "rms_primary_window": 0.06409,
+      "rms_background_window": 0.03618
+    },
+    {
+      "file": "tail_024_on.mp3",
+      "duration_s": 11.97,
+      "events": 1,
+      "speech_s": 7.33,
+      "speech_fraction": 0.612,
+      "turn_end_s": 7.65,
+      "segments": [
+        [
+          0.32,
+          7.65
+        ]
+      ],
+      "rms_overall": 0.03768,
+      "rms_primary_window": 0.05248,
+      "rms_background_window": 0.00017
+    },
+    {
+      "file": "tail_028_off.mp3",
+      "duration_s": 11.36,
+      "events": 1,
+      "speech_s": 10.88,
+      "speech_fraction": 0.958,
+      "turn_end_s": 11.36,
+      "segments": [
+        [
+          0.48,
+          11.36
+        ]
+      ],
+      "rms_overall": 0.04821,
+      "rms_primary_window": 0.05904,
+      "rms_background_window": 0.01986
+    },
+    {
+      "file": "tail_028_on.mp3",
+      "duration_s": 11.36,
+      "events": 2,
+      "speech_s": 5.82,
+      "speech_fraction": 0.513,
+      "turn_end_s": 7.04,
+      "segments": [
+        [
+          0.58,
+          5.7
+        ],
+        [
+          6.34,
+          7.04
+        ]
+      ],
+      "rms_overall": 0.03622,
+      "rms_primary_window": 0.05072,
+      "rms_background_window": 4e-05
+    }
+  ],
+  "pairs": [
+    {
+      "clip": "bystander_000",
+      "off": {
+        "file": "bystander_000_off.mp3",
+        "duration_s": 13.98,
+        "events": 2,
+        "speech_s": 12.58,
+        "speech_fraction": 0.899,
+        "turn_end_s": 13.98,
+        "segments": [
+          [
+            0.42,
+            10.14
+          ],
+          [
+            11.14,
+            13.98
+          ]
+        ],
+        "rms_overall": 0.05337,
+        "rms_primary_window": 0.06318,
+        "rms_background_window": 0.03374
+      },
+      "on": {
+        "file": "bystander_000_on.mp3",
+        "duration_s": 13.98,
+        "events": 1,
+        "speech_s": 9.38,
+        "speech_fraction": 0.67,
+        "turn_end_s": 9.79,
+        "segments": [
+          [
+            0.42,
+            9.79
+          ]
+        ],
+        "rms_overall": 0.03971,
+        "rms_primary_window": 0.04716,
+        "rms_background_window": 0.00013
+      },
+      "turn_end_delta_s": -4.19
+    },
+    {
+      "clip": "tail_024",
+      "off": {
+        "file": "tail_024_off.mp3",
+        "duration_s": 11.97,
+        "events": 1,
+        "speech_s": 11.65,
+        "speech_fraction": 0.973,
+        "turn_end_s": 11.97,
+        "segments": [
+          [
+            0.32,
+            11.97
+          ]
+        ],
+        "rms_overall": 0.05288,
+        "rms_primary_window": 0.06409,
+        "rms_background_window": 0.03618
+      },
+      "on": {
+        "file": "tail_024_on.mp3",
+        "duration_s": 11.97,
+        "events": 1,
+        "speech_s": 7.33,
+        "speech_fraction": 0.612,
+        "turn_end_s": 7.65,
+        "segments": [
+          [
+            0.32,
+            7.65
+          ]
+        ],
+        "rms_overall": 0.03768,
+        "rms_primary_window": 0.05248,
+        "rms_background_window": 0.00017
+      },
+      "turn_end_delta_s": -4.32
+    },
+    {
+      "clip": "tail_028",
+      "off": {
+        "file": "tail_028_off.mp3",
+        "duration_s": 11.36,
+        "events": 1,
+        "speech_s": 10.88,
+        "speech_fraction": 0.958,
+        "turn_end_s": 11.36,
+        "segments": [
+          [
+            0.48,
+            11.36
+          ]
+        ],
+        "rms_overall": 0.04821,
+        "rms_primary_window": 0.05904,
+        "rms_background_window": 0.01986
+      },
+      "on": {
+        "file": "tail_028_on.mp3",
+        "duration_s": 11.36,
+        "events": 2,
+        "speech_s": 5.82,
+        "speech_fraction": 0.513,
+        "turn_end_s": 7.04,
+        "segments": [
+          [
+            0.58,
+            5.7
+          ],
+          [
+            6.34,
+            7.04
+          ]
+        ],
+        "rms_overall": 0.03622,
+        "rms_primary_window": 0.05072,
+        "rms_background_window": 4e-05
+      },
+      "turn_end_delta_s": -4.32
+    }
+  ]
+}
