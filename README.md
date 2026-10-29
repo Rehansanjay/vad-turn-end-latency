@@ -128,6 +128,54 @@ Over 106 labelled files it does not hold: measured across the actual primary spa
 preserves the caller at or slightly above the input level. The earlier figure was an artefact of
 three clips and a fixed 5-second window.
 
+### The other two splits, and where VoxLock fails
+
+`call_center` is one of three splits. Running the same measurement over all 265 files changes
+the picture in a way one split did not show.
+
+**`work`** (96 files, 95 with background, 83 turn-end testable) — the richest background material
+in the dataset:
+
+| condition | false triggers | files affected | mean turn-end delay | rms primary | rms background | separation |
+| --- | --- | --- | --- | --- | --- | --- |
+| raw mix | **263** | 75 | 2.05s | 0.05528 | 0.01125 | 4.9 |
+| Krisp VI 2.5 | 19 | 14 | 0.35s | 0.05229 | 0.00058 | 90.2 |
+| **VoxLock** | **12** | **9** | **-0.29s** | **0.05550** | **0.00029** | **194.5** |
+
+Same shape as `call_center`: VoxLock ahead on false triggers, and the only condition whose mean
+turn-end delay is negative — Krisp still leaves 0.35s on average.
+
+**`phone_calls`** (63 files) is where it breaks, and the honest answer is two-sided.
+
+First, the split cannot carry much weight: only **9 of 63 files contain any background span** and
+only **4 are turn-end testable**, so the turn-end means there are a single file's behaviour. That
+file, `143.wav`, has a 46-second background tail and is a clean loss for VoxLock — raw 26.20s,
+Krisp **0.16s**, VoxLock **13.02s**.
+
+Second, and more seriously, **VoxLock removes the primary speaker on a large minority of this
+split.** Primary level preserved relative to the raw mix, measured over the labelled primary
+spans:
+
+| split | median preserved | files below 80% | worst |
+| --- | --- | --- | --- |
+| call_center | 1.066 | **0 of 106** | 0.916 |
+| work | 1.038 | 4 of 96 | 0.442 |
+| **phone_calls** | **0.855** | **27 of 63** | **0.022** |
+
+On `161.wav` the caller is reduced to 2.2% of input level and VAD-detected speech falls from 93%
+to 12% — the speaker is gone. `160.wav`: 86% to 5%. Krisp preserves all of these.
+
+The obvious explanation is that VoxLock's documented protocol takes its voice reference from
+`loud_sample()` — the loudest 3s of the first 15s — and on a phone call the other party can
+dominate that window, locking the reference onto the wrong speaker. **That was tested and it is
+mostly not the cause.** Re-running the five worst files with a reference taken from a span the
+dataset labels as primary recovered only one of them (`160.wav`, 0.095 -> 0.760). The other four
+stayed lost with ground-truth reference audio, so the failure is in the isolation itself rather
+than in sample selection.
+
+So: VoxLock is clearly ahead on the two splits with real background, and has a reproducible
+failure mode on the third that Krisp does not share.
+
 ### Reproducing
 
 ```
