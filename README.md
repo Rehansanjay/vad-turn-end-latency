@@ -72,6 +72,76 @@ One side effect worth knowing about: the 15-25% drop on the primary is consisten
 that anything downstream doing its own gain control or energy thresholding will see a
 quieter signal than it did before the filter.
 
+## Measured: the Krisp Voice Isolation Benchmark
+
+The demo-pair section above has one real weakness — no ground truth for where the caller stops,
+so "turn end" was VAD-attributed rather than scored. The benchmark removes that. Its raw dataset
+labels every span `primary`, `mix`, `secondary` or `noise`, so a VAD onset inside a
+background-only span is wrong *by construction*, and turn-end delay can be measured from the end
+of the last primary-bearing span instead of guessed.
+
+106 files, the `call_center` split, 163 minutes of audio per condition. Three conditions: the raw
+mix, **Krisp VI 2.5 default** as Krisp publishes it, and **VoxLock** run through its own
+documented protocol (`load_audio` -> `loud_sample` -> `isolate`). Everything resampled to 16 kHz
+first, because the raw mixes are 32 kHz and Krisp publishes at 16 kHz — comparing them untouched
+would measure sample rate rather than isolation.
+
+### False triggers: VAD onsets inside background-only spans
+
+| condition | false triggers | files affected (of 105) |
+| --- | --- | --- |
+| raw mix | **229** | 68 |
+| Krisp VI 2.5 | **16** | 10 |
+| **VoxLock** | **2** | **2** |
+
+### Turn-end delay: dead air after the caller's last labelled word
+
+The median is near zero in every condition and it is the wrong statistic. This is a tail
+phenomenon: most calls have no trailing background loud enough to matter, and about a third are
+ruined by it. Across the 52 files whose last labelled span is background:
+
+| condition | median | p90 | worst | files over 0.5s | total dead air |
+| --- | --- | --- | --- | --- | --- |
+| raw mix | -0.06s | 5.22s | **26.64s** | **18 of 52** | **99.3s** |
+| Krisp VI 2.5 | -0.21s | -0.02s | 3.51s | 1 | 3.5s |
+| **VoxLock** | -0.20s | -0.04s | **0.17s** | **0** | **0.0s** |
+
+Worst cases, raw to VoxLock: `047.wav` 26.64s -> -0.59s, `059.wav` 14.72s -> -0.16s,
+`087.wav` 10.23s -> -0.20s. Twenty-six seconds is an agent that believes the caller is still
+talking for nearly half a minute after they stopped.
+
+### The attenuator control
+
+| condition | rms primary | rms background | separation |
+| --- | --- | --- | --- |
+| raw mix | 0.04473 | 0.00361 | 12.4 |
+| Krisp VI 2.5 | 0.04371 | 0.00029 | 149.0 |
+| **VoxLock** | **0.04726** | **0.00016** | **288.7** |
+
+Levels are taken over the labelled spans rather than fixed windows. Neither filter is an
+attenuator, and **VoxLock's primary comes out slightly louder than the raw mix** while its
+background is the quietest of the three.
+
+That last point corrects something stated earlier in this repo. On the three demo pairs the
+primary appeared to drop 15-25%, and that was reported as a caveat for downstream gain control.
+Over 106 labelled files it does not hold: measured across the actual primary spans, VoxLock
+preserves the caller at or slightly above the input level. The earlier figure was an artefact of
+three clips and a fixed 5-second window.
+
+### Reproducing
+
+```
+python probe/fetch_krisp.py audio/krisp            # raw + vi_2_5_default + labels
+python probe/gen_voxlock.py audio/krisp/raw audio/krisp/voxlock
+python probe/krisp_bench.py audio/krisp results/krisp_call_center.json raw vi25 voxlock
+python probe/summarise.py results/krisp_call_center.json
+```
+
+Audio is not redistributed here. Both datasets are
+[Krisp-AI/VoiceIsolation-Benchmark-Dataset](https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset)
+and its `-Processed` companion, **CC BY-NC 4.0**, credit to Krisp — including for publishing
+their own model's output, which is what makes a side-by-side comparison possible at all.
+
 ### What this is not
 
 - **Three clips**, from the project's own demo set.

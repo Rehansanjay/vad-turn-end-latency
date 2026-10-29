@@ -1,0 +1,40 @@
+{
+ "files_total": 106,
+ "files_with_background": 105,
+ "files_turn_end_testable": 52,
+ "conditions": {
+  "raw": {
+   "false_triggers": 229,
+   "files_with_false_triggers": 68,
+   "median_turn_end_delay_s": -0.06,
+   "mean_turn_end_delay_s": 1.8,
+   "speech_fraction_mean": 0.69,
+   "n_delays": 52,
+   "rms_primary_mean": 0.04473,
+   "rms_background_mean": 0.00361,
+   "primary_to_background_ratio": 12.4
+  },
+  "vi25": {
+   "false_triggers": 16,
+   "files_with_false_triggers": 10,
+   "median_turn_end_delay_s": -0.21,
+   "mean_turn_end_delay_s": -0.18,
+   "speech_fraction_mean": 0.598,
+   "n_delays": 52,
+   "rms_primary_mean": 0.04371,
+   "rms_background_mean": 0.00029,
+   "primary_to_background_ratio": 149.0
+  },
+  "voxlock": {
+   "false_triggers": 2,
+   "files_with_false_triggers": 2,
+   "median_turn_end_delay_s": -0.2,
+   "mean_turn_end_delay_s": -0.24,
+   "speech_fraction_mean": 0.585,
+   "n_delays": 52,
+   "rms_primary_mean": 0.04726,
+   "rms_background_mean": 0.00016,
+   "primary_to_background_ratio": 288.7
+  }
+ }
+}
