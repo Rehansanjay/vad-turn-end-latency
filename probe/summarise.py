@@ -14,6 +14,13 @@ import sys
 from pathlib import Path
 
 data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+# alkove_bench.py records the run's own metadata around the per-file results
+# (which alkove build produced them, above all), so unwrap that first. The
+# Krisp files are the bare mapping.
+meta = {k: v for k, v in data.items() if k != "conditions"} if "conditions" in data else {}
+if meta:
+    data = data["conditions"]
+    print("run: " + ", ".join(f"{k}={v}" for k, v in meta.items()))
 conds = list(data)
 
 print(f"conditions: {', '.join(conds)}\n")
@@ -60,6 +67,31 @@ for c in conds:
 
 print("\nA filter that only attenuates moves both columns together; the ratio is what separates")
 print("an isolator from a volume control.")
+
+# The two columns that catch a filter which is simply destroying the caller.
+# Every metric above improves when the primary speaker is removed, so none of
+# them can tell a good filter from a destructive one on its own.
+print()
+print(f"{'condition':12}{'primary recall':>16}{'bg speech %':>13}{'worst recall':>14}{'files recall<0.8':>18}")
+print("-" * 73)
+for c in conds:
+    d = data[c]
+    rec = [d[n]["primary_recall"] for n in d if d[n].get("primary_recall") is not None]
+    leak = [d[n]["background_speech_fraction"] for n in d if d[n].get("background_speech_fraction") is not None]
+    poor = sum(1 for r in rec if r < 0.8)
+    rowsum[c]["primary_recall_mean"] = round(st.fmean(rec), 3) if rec else None
+    rowsum[c]["primary_recall_worst"] = round(min(rec), 3) if rec else None
+    rowsum[c]["files_recall_below_0_8"] = poor
+    rowsum[c]["background_speech_fraction_mean"] = round(st.fmean(leak), 3) if leak else None
+    print(f"{c:12}{(st.fmean(rec) if rec else float('nan')):16.3f}"
+          f"{(100 * st.fmean(leak) if leak else float('nan')):12.1f}%"
+          f"{(min(rec) if rec else float('nan')):14.3f}{poor:18d}")
+
+print()
+print("Recall is the metric a filter cannot game by removing signal: drop the caller and")
+print("false triggers, dead air and background leak all improve at once. Background speech %")
+print("is VAD speech inside background-only spans anywhere in the file, which is what a VAD")
+print("that never switches off does instead of producing a new onset.")
 
 if len(sys.argv) > 2:
     Path(sys.argv[2]).write_text(
