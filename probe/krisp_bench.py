@@ -39,6 +39,8 @@ import soxr
 
 from livekit.plugins.silero.onnx_model import OnnxModel, new_inference_session
 
+from probe.metrics import score
+
 SR = 16000
 WINDOW = 512
 ACTIVATION = 0.5
@@ -46,8 +48,6 @@ DEACTIVATION = 0.35
 MIN_SPEECH = 0.05
 MIN_SILENCE = 0.55
 
-PRIMARY_LABELS = {"primary", "mix"}
-BACKGROUND_LABELS = {"secondary", "noise"}
 
 
 def load_16k(path: Path) -> np.ndarray:
@@ -87,67 +87,6 @@ def segments_from(x: np.ndarray) -> list[tuple[float, float]]:
     return out
 
 
-def rms(x: np.ndarray) -> float:
-    return float(np.sqrt((x**2).mean())) if len(x) else 0.0
-
-
-def spans(meta: dict, labels: set[str]) -> list[tuple[float, float]]:
-    return [(s["start"], s["end"]) for s in meta.get("segments") or [] if s["label"] in labels]
-
-
-def analyse(path: Path, meta: dict) -> dict:
-    x = load_16k(path)
-    vad = segments_from(x)
-    dur = len(x) / SR
-
-    bg = spans(meta, BACKGROUND_LABELS)
-    pri = spans(meta, PRIMARY_LABELS)
-
-    # a false trigger is an ONSET inside a background-only span
-    false_triggers = sum(1 for s, _ in vad if any(b0 <= s <= b1 for b0, b1 in bg))
-
-    # turn-end delay measured from the end of the last primary-bearing span
-    last_primary_end = max((e for _, e in pri), default=None)
-    vad_last = max((e for _, e in vad), default=0.0)
-    delay = None if last_primary_end is None else round(vad_last - last_primary_end, 2)
-
-    # level control, taken over the labelled spans rather than fixed windows
-    def level(sp: list[tuple[float, float]]) -> float:
-        if not sp:
-            return 0.0
-        parts = [x[int(a * SR) : int(b * SR)] for a, b in sp]
-        parts = [p for p in parts if len(p)]
-        return rms(np.concatenate(parts)) if parts else 0.0
-
-    # Turn-end delay is only testable where background outlasts the caller. On a file that
-    # ends with the primary still talking there is nothing for a filter to cut, and averaging
-    # those in would dilute the effect toward zero.
-    segs = meta.get("segments") or []
-    last_label = segs[-1]["label"] if segs else None
-    ends_with_background = last_label in BACKGROUND_LABELS
-    tail_s = None
-    if ends_with_background and last_primary_end is not None:
-        tail_s = round(segs[-1]["end"] - last_primary_end, 2)
-
-    speech = sum(e - s for s, e in vad)
-    return {
-        "ends_with_background": ends_with_background,
-        "last_label": last_label,
-        "background_tail_s": tail_s,
-        "duration_s": round(dur, 2),
-        "vad_events": len(vad),
-        "speech_s": round(speech, 2),
-        "speech_fraction": round(speech / dur, 3) if dur else 0.0,
-        "false_triggers": false_triggers,
-        "background_spans": len(bg),
-        "last_primary_end_s": None if last_primary_end is None else round(last_primary_end, 2),
-        "vad_last_speech_s": round(vad_last, 2),
-        "turn_end_delay_s": delay,
-        "rms_primary": round(level(pri), 5),
-        "rms_background": round(level(bg), 5),
-    }
-
-
 def main() -> None:
     root = Path(sys.argv[1])
     out_path = Path(sys.argv[2])
@@ -168,7 +107,8 @@ def main() -> None:
             meta = meta_by_name.get(f.name)
             if meta is None:
                 continue
-            per_file[f.name] = analyse(f, meta)
+            x = load_16k(f)
+            per_file[f.name] = score(x, meta, segments_from(x))
             if n % 20 == 0:
                 print(f"  {cond}: {n}/{len(files)}", flush=True)
         results[cond] = per_file
