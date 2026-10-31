@@ -202,12 +202,152 @@ their own model's output, which is what makes a side-by-side comparison possible
   lower `min_silence` and count onsets -- the harness prints segment boundaries so merges
   and re-triggers stay visible.
 
+## Measured: alkove Focus and Cue
+
+[alkove](https://github.com/alkove-ai/alkove) is open-weights voice isolation (**Focus**) and a VAD
+(**Cue**), with LiveKit and Pipecat plugins. Its maintainer asked for this benchmark and asked
+specifically for the parts that do not flatter the models, so those are in here with the rest.
+
+Unlike Krisp, alkove is a library rather than published output, so the filter runs in process and
+four conditions are built per clip:
+
+| condition | what it answers |
+| --- | --- |
+| raw -> Silero | the baseline the rest of this repo uses |
+| Focus -> Silero | what Focus does to the VAD most people actually run |
+| raw -> Cue | Cue on its own, unfiltered |
+| **Focus -> Cue** | **how alkove's own LiveKit plugin runs** |
+
+Three splits of the Krisp benchmark, 265 labelled files, `alkove==0.3.3`. Two alkove passes per
+clip rather than four: `focus=True, cue=True` returns the filtered audio and Cue's spans over it
+together, so the filtered audio is computed once and the Silero pass reuses it. Each condition is
+scored against the audio its own VAD heard, so the RMS control describes what the VAD got.
+
+`phone_calls` is fed **as-is at its stored 32 kHz** on the maintainer's instruction: the core
+resamples everything to 16 kHz before Focus and Cue anyway, and as-is is what a LiveKit agent sees
+on a SIP call — phone content at the session rate.
+
+### Primary recall: the metric a filter cannot game
+
+Every other metric here improves when a filter destroys the caller. Remove the primary speaker and
+false triggers, dead air and background leak all fall at once. Recall is what catches that, and it
+is measurable on all 265 files.
+
+| split | raw -> Silero | Focus -> Silero | raw -> Cue | Focus -> Cue |
+| --- | --- | --- | --- | --- |
+| call_center (106) | **0.923** | 0.901 | 0.931 | 0.899 |
+| work (96) | **0.967** | 0.948 | 0.973 | 0.946 |
+| phone_calls (63) | **0.927** | 0.906 | **0.844** | 0.897 |
+
+Focus costs recall on the two wideband splits — on `call_center`, **94 of 106 clips get worse, 11
+get better and 1 is unchanged**, mean 0.923 to 0.901, worst case 0.819 to 0.743. That is the price of the numbers below and
+it should be read alongside them.
+
+### Background speech: VAD speech inside background-only spans
+
+`false_triggers` counts onsets, so it only sees a VAD that switches *on* during background. When the
+caller goes quiet and a secondary voice carries on, a VAD that simply stays on produces no new onset
+at all. This counts the time instead.
+
+| split | raw -> Silero | Focus -> Silero | raw -> Cue | Focus -> Cue |
+| --- | --- | --- | --- | --- |
+| call_center | 31.2% | 17.6% | **47.7%** | **14.9%** |
+| work | 42.4% | 24.6% | **53.4%** | **23.8%** |
+
+**Cue alone hears more background than Silero alone, not less** — 47.7% against 31.2%, and 53.4%
+against 42.4%. Same direction on both splits, so it is a property of Cue rather than a quirk of one
+set. Paired with Focus it becomes the best of the four.
+
+### Turn-end delay: dead air after the caller's last labelled word
+
+Reported only where the sample supports it. `phone_calls` has **4 testable files** out of 63, so its
+turn-end numbers are omitted rather than published.
+
+| split | raw -> Silero | Focus -> Silero | raw -> Cue | Focus -> Cue | n |
+| --- | --- | --- | --- | --- | --- |
+| call_center, mean | 1.80s | 1.29s | 2.05s | **1.04s** | 52 |
+| work, mean | 2.05s | 1.50s | 2.89s | **0.83s** | 83 |
+| work, median | 0.06s | -0.11s | **0.78s** | **-0.19s** | 83 |
+
+That `work` median is the clearest result in the set. **Cue on its own runs late on more than half
+the files** — a median of 0.78s, against Silero's 0.06s. Focus takes it to -0.19s. So Cue needs
+Focus in a way Silero does not.
+
+### The control: is Focus separating or just attenuating?
+
+| split | condition | RMS primary | RMS background | ratio |
+| --- | --- | --- | --- | --- |
+| call_center | raw | 0.04473 | 0.00361 | 12.4 |
+| call_center | Focus | 0.04606 | 0.00219 | **21.0** |
+| work | raw | 0.05528 | 0.01125 | 4.9 |
+| work | Focus | 0.05528 | 0.00564 | **9.8** |
+
+On `work` Focus leaves the mean primary level unchanged to the **seventh** decimal — 0.05528062
+against 0.05527958, a difference of 0.002% — while halving the background. The two round to the same
+five decimals, which looks like a copy-paste error and is not one; all 96 files differ individually
+and the means converge. On `call_center` the primary actually rises 3%. Either way the ratio roughly
+doubles, so this is separation, not a volume control.
+
+### Where Focus earns its place, and it is not the same reason twice
+
+On `call_center` and `work` it suppresses background the VAD would otherwise hear.
+
+On `phone_calls` there is almost no background to suppress — 9 of 63 files contain a background span
+at all. There it does a different job: **it makes the caller visible to Cue.**
+
+`raw -> Cue` on band-limited audio has a healthy median of 0.927 and a brutal tail: **13 of 63 files
+below 0.8 recall, 6 below 0.5**, worst **0.078**, where Cue misses 92% of the caller's labelled
+speech. Focus brings those back:
+
+| file | raw -> Cue | Focus -> Cue | raw -> Silero |
+| --- | --- | --- | --- |
+| `154.wav` | **0.078** | 0.756 | 0.995 |
+| `109.wav` | 0.141 | 0.853 | 0.842 |
+| `152.wav` | 0.275 | 0.965 | 0.966 |
+| `157.wav` | 0.284 | 0.902 | 0.871 |
+
+That is 0.3.3 doing what it was built for: it checks the power above ~4.6 kHz and, when that band is
+empty, fills it with faint noise. Silero needs none of it — the right-hand column is its unfiltered
+recall on the same files. **So Silero is robust to band-limiting and Cue is not**, and on this split
+Focus *costs* Silero: files below 0.8 recall go from 1 to 6.
+
+### What this does not establish
+
+- **`phone_calls` is underpowered for everything except recall.** 9 of 63 files have a background
+  span, so its background share, false triggers and RMS ratio rest on those 9; 4 are turn-end
+  testable, so its turn-end numbers are not reported at all.
+- **No voiceprint.** Focus runs in keep-the-closest-voice mode throughout, which is what the LiveKit
+  plugin does by default and what suits the headset recordings in `work`. Enrolled-voiceprint
+  performance is not measured here.
+- **One alkove build.** 0.3.3, released the day these runs happened. Earlier builds fail on
+  band-limited audio by the maintainer's own account, so these numbers do not transfer backwards.
+- **Three clips are not a result.** A pilot on three `call_center` clips read 2.1% background speech
+  for `Focus -> Cue`; over 106 it is 14.9%. The pilot was not wrong so much as meaningless, and the
+  same mistake is why `phone_calls` turn-end is absent above.
+
+Raw output: [`results/alkove_call_center.json`](results/alkove_call_center.json),
+[`alkove_work.json`](results/alkove_work.json),
+[`alkove_phone_calls.json`](results/alkove_phone_calls.json), with summaries beside each.
+
 ## Reproducing
 
 ```
-pip install livekit-plugins-silero soundfile numpy
+pip install livekit-plugins-silero soundfile numpy soxr
+
+# the VoxLock demo pairs
 python probe/fetch_voxlock_demo.py audio/voxlock
 python probe/vad_turn_end.py audio/voxlock/*.mp3 --json results/voxlock.json
+
+# the Krisp benchmark, one split at a time
+python -m probe.fetch_krisp audio/krisp call_center
+python probe/krisp_bench.py audio/krisp results/krisp_call_center.json raw vi25
+python probe/summarise.py results/krisp_call_center.json
+
+# alkove, four conditions, the filter applied in process
+pip install "alkove>=0.3.3"
+python -m probe.fetch_krisp audio/krisp-work work --raw-only
+python -m probe.alkove_bench audio/krisp-work results/alkove_work.json
+python probe/summarise.py results/alkove_work.json results/alkove_work_summary.json
 ```
 
 The demo audio belongs to the VoxLock project and is not redistributed here; the fetch
