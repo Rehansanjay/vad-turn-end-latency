@@ -281,12 +281,13 @@ long the background keeps the VAD reporting speech, which is the job Focus does,
 about turn-taking logic built on top of it. The negative medians most likely mean the tail of the
 last word is being lost, which matches the recall cost above, rather than the VAD cutting off early.
 
-He also pointed out that **Cue's defaults are tuned to sit behind Focus**: speech only ends after
-0.6s under 0.1, against 0.35 for the Silero settings LiveKit ships. A background voice that holds
-Cue between 0.1 and 0.5 keeps the span open, which accounts for a good share of `raw -> Cue`'s
-lateness and of its background share two tables up. His own reading was that Cue without Focus needs
-its own defaults. The numbers here are still what a user gets out of the box, which is what every
-condition in this run measures.
+He also pointed out that **Cue's defaults are tuned to sit behind Focus**. Cue ends a span after
+0.6s below probability 0.1; the Silero settings LiveKit ships deactivate at 0.35 and then need 0.55s
+of silence. The thresholds are the part that matters -- 0.1 against 0.35 -- because the lower bar
+keeps the span open on background too quiet to hold Silero. A secondary voice sitting between 0.1
+and 0.5 therefore accounts for a good share of `raw -> Cue`'s lateness and of its background share
+two tables up. His own reading was that Cue without Focus needs its own defaults. The numbers here
+stand as what a user gets out of the box, which is what every condition in this run measures.
 
 ### The control: is Focus separating or just attenuating?
 

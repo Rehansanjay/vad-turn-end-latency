@@ -135,3 +135,123 @@ def score(x: np.ndarray, meta: dict, vad: list[Span]) -> dict:
         "background_speech_s": round(leaked, 2),
         "background_speech_fraction": round(leaked / background_s, 3) if background_s else None,
     }
+
+
+# --- turn decisions ---------------------------------------------------------
+#
+# ``turn_end_delay_s`` above is the backdated end of the last span. alkove's
+# maintainer pointed out that this is not the moment an agent decides the turn
+# is over, and he is right: it measures how long background keeps the VAD
+# reporting speech, which is the filter's job, and says nothing about what the
+# caller waits through or gets interrupted by.
+#
+# These two measure the decision instead. They need a timestamp per turn rather
+# than a span list, so a VAD that exposes its own turn output can be scored the
+# same way as one driven by a silence timeout.
+
+
+def decisions_from_spans(vad: list[Span], silence_s: float) -> list[float]:
+    """When a silence-timeout VAD would actually declare each turn over.
+
+    A VAD declares end of speech only after ``silence_s`` of quiet, so the
+    decision lands that much after the span it closes. A filter can look good on
+    the backdated number while the caller is still sitting there waiting.
+    """
+    return [end + silence_s for _, end in vad]
+
+
+def _median(xs: list[float]) -> float | None:
+    if not xs:
+        return None
+    ys = sorted(xs)
+    mid = len(ys) // 2
+    return ys[mid] if len(ys) % 2 else (ys[mid - 1] + ys[mid]) / 2
+
+
+def turn_metrics(
+    meta: dict,
+    decisions: list[float],
+    vad: list[Span],
+    tolerance_s: float = 0.10,
+    resume_s: float = 1.0,
+    horizon_s: float = 3.0,
+) -> dict:
+    """Score turn decisions against the labelled caller spans.
+
+    **Lag.** For a decision that lands after the caller stopped, how long they
+    waited. This is the dead air a caller actually hears.
+
+    **Cut-off.** A decision taken while the caller was not finished: inside an
+    open caller span, and followed by the caller resuming within ``resume_s``.
+    Operationally, the agent would have taken the floor and the caller carried
+    straight on.
+
+    Two things about this dataset shape the definition, and both of them were
+    got wrong before the numbers made them obvious.
+
+    A labelled ``primary`` span is a region where the caller is the active
+    speaker, *pauses included* -- not one utterance. So "a decision inside an
+    open span" counts every natural pause as an interruption. Requiring the
+    caller to resume within ``resume_s`` is what separates a premature endpoint
+    from an ordinary turn boundary.
+
+    And severity cannot be "the speech left in the span", because these spans
+    run to forty seconds and more. Scored that way the worst case on ``work``
+    read as a caller cut off with 39 seconds still to come, which is not a
+    thing that happened to anybody. What the agent would actually talk over is
+    bounded: the caller's speech in the ``horizon_s`` after the endpoint. That
+    is what ``overlap_speech_s`` measures.
+
+    ``tolerance_s`` covers label boundary precision -- a decision within it of a
+    span's end is the same instant measured twice, not an interruption.
+    """
+    pri = sorted(spans(meta, PRIMARY_LABELS))
+    vad = sorted(vad)
+
+    lags: list[float] = []
+    overlaps: list[float] = []
+    gaps: list[float] = []
+    worst: dict | None = None
+
+    for t in decisions:
+        open_span = next(((a, b) for a, b in pri if a <= t < b - tolerance_s), None)
+        if open_span is not None:
+            _, b = open_span
+            resumes_at = next((s0 for s0, _ in vad if t < s0 <= t + resume_s and s0 < b), None)
+            if resumes_at is None:
+                continue
+            # what the agent would have talked over, bounded rather than
+            # running to the end of a region that may be a minute long
+            spoken = overlap(vad, [(t, min(t + horizon_s, b))])
+            overlaps.append(spoken)
+            gaps.append(resumes_at - t)
+            if worst is None or spoken > worst["overlap_speech_s"]:
+                worst = {
+                    "overlap_speech_s": round(spoken, 2),
+                    "at_s": round(t, 2),
+                    "resumed_after_s": round(resumes_at - t, 2),
+                }
+            continue
+        prev_end = max((b for _, b in pri if b <= t), default=None)
+        if prev_end is not None:
+            lags.append(t - prev_end)
+
+    turns = len(decisions)
+    return {
+        "turns": turns,
+        "cutoffs": len(overlaps),
+        "cutoff_rate": round(len(overlaps) / turns, 3) if turns else None,
+        "horizon_s": horizon_s,
+        # caller speech in the horizon after a premature endpoint: what the
+        # agent would have talked over
+        "overlap_speech_s_median": round(_median(overlaps), 2) if overlaps else None,
+        "overlap_speech_s_max": round(max(overlaps), 2) if overlaps else None,
+        # how quickly they carried on; a very short gap is a clipped word
+        "resume_gap_s_median": round(_median(gaps), 2) if gaps else None,
+        "cutoff_worst": worst,
+        # dead air on the turns that were not cut off
+        "lag_s_median": round(_median(lags), 2) if lags else None,
+        "lag_s_mean": round(sum(lags) / len(lags), 2) if lags else None,
+        "lag_s_max": round(max(lags), 2) if lags else None,
+        "lag_turns": len(lags),
+    }
