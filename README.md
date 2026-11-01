@@ -273,6 +273,21 @@ That `work` median is the clearest result in the set. **Cue on its own runs late
 the files** — a median of 0.78s, against Silero's 0.06s. Focus takes it to -0.19s. So Cue needs
 Focus in a way Silero does not.
 
+**What this number is, and what it is not.** alkove's maintainer read `alkove_bench.py` and
+`metrics.py` against the core and corrected the framing, which is worth stating rather than leaving
+implied. The delay here is the backdated end of the last span -- `t - silence` for Silero, the last
+frame over 0.5 for Cue -- not the moment an agent would declare the turn over. So it measures how
+long the background keeps the VAD reporting speech, which is the job Focus does, and it says nothing
+about turn-taking logic built on top of it. The negative medians most likely mean the tail of the
+last word is being lost, which matches the recall cost above, rather than the VAD cutting off early.
+
+He also pointed out that **Cue's defaults are tuned to sit behind Focus**: speech only ends after
+0.6s under 0.1, against 0.35 for the Silero settings LiveKit ships. A background voice that holds
+Cue between 0.1 and 0.5 keeps the span open, which accounts for a good share of `raw -> Cue`'s
+lateness and of its background share two tables up. His own reading was that Cue without Focus needs
+its own defaults. The numbers here are still what a user gets out of the box, which is what every
+condition in this run measures.
+
 ### The control: is Focus separating or just attenuating?
 
 | split | condition | RMS primary | RMS background | ratio |
