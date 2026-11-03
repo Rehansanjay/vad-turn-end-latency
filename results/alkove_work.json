@@ -313,9 +313,9 @@
     "background_speech_fraction": 0.565
    },
    "184.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 12.93,
     "duration_s": 68.51,
     "vad_events": 5,
     "speech_s": 50.37,
@@ -511,9 +511,9 @@
     "background_speech_fraction": 0.901
    },
    "193.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 7.95,
     "duration_s": 69.61,
     "vad_events": 7,
     "speech_s": 53.73,
@@ -907,9 +907,9 @@
     "background_speech_fraction": 0.773
    },
    "211.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 8.92,
     "duration_s": 62.29,
     "vad_events": 2,
     "speech_s": 39.2,
@@ -929,9 +929,9 @@
     "background_speech_fraction": 0.0
    },
    "212.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.05,
     "duration_s": 64.89,
     "vad_events": 2,
     "speech_s": 41.41,
@@ -1083,9 +1083,9 @@
     "background_speech_fraction": 0.0
    },
    "219.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.59,
     "duration_s": 70.83,
     "vad_events": 8,
     "speech_s": 37.54,
@@ -1127,9 +1127,9 @@
     "background_speech_fraction": 0.869
    },
    "221.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 10.08,
     "duration_s": 68.26,
     "vad_events": 3,
     "speech_s": 36.77,
@@ -1325,9 +1325,9 @@
     "background_speech_fraction": 0.644
    },
    "230.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 9.01,
     "duration_s": 108.26,
     "vad_events": 6,
     "speech_s": 91.36,
@@ -1941,9 +1941,9 @@
     "background_speech_fraction": 0.66
    },
    "258.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 5.54,
     "duration_s": 102.19,
     "vad_events": 11,
     "speech_s": 73.5,
@@ -2095,9 +2095,9 @@
     "background_speech_fraction": 0.27
    },
    "265.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 11.11,
     "duration_s": 80.19,
     "vad_events": 9,
     "speech_s": 60.03,
@@ -2427,9 +2427,9 @@
     "background_speech_fraction": 0.0
    },
    "184.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 12.93,
     "duration_s": 68.51,
     "vad_events": 3,
     "speech_s": 42.24,
@@ -2625,9 +2625,9 @@
     "background_speech_fraction": 0.484
    },
    "193.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 7.95,
     "duration_s": 69.61,
     "vad_events": 6,
     "speech_s": 52.96,
@@ -3021,9 +3021,9 @@
     "background_speech_fraction": 0.285
    },
    "211.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 8.92,
     "duration_s": 62.29,
     "vad_events": 2,
     "speech_s": 39.3,
@@ -3043,9 +3043,9 @@
     "background_speech_fraction": 0.0
    },
    "212.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.05,
     "duration_s": 64.89,
     "vad_events": 2,
     "speech_s": 41.44,
@@ -3197,9 +3197,9 @@
     "background_speech_fraction": 0.101
    },
    "219.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.59,
     "duration_s": 70.83,
     "vad_events": 9,
     "speech_s": 41.15,
@@ -3241,9 +3241,9 @@
     "background_speech_fraction": 0.641
    },
    "221.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 10.08,
     "duration_s": 68.26,
     "vad_events": 3,
     "speech_s": 36.67,
@@ -3439,9 +3439,9 @@
     "background_speech_fraction": 0.594
    },
    "230.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 9.01,
     "duration_s": 108.26,
     "vad_events": 5,
     "speech_s": 79.97,
@@ -4055,9 +4055,9 @@
     "background_speech_fraction": 0.625
    },
    "258.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 5.54,
     "duration_s": 102.19,
     "vad_events": 11,
     "speech_s": 68.93,
@@ -4209,9 +4209,9 @@
     "background_speech_fraction": 0.003
    },
    "265.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 11.11,
     "duration_s": 80.19,
     "vad_events": 5,
     "speech_s": 59.9,
@@ -4541,9 +4541,9 @@
     "background_speech_fraction": 0.559
    },
    "184.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 12.93,
     "duration_s": 68.51,
     "vad_events": 1,
     "speech_s": 54.48,
@@ -4739,9 +4739,9 @@
     "background_speech_fraction": 0.919
    },
    "193.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 7.95,
     "duration_s": 69.61,
     "vad_events": 2,
     "speech_s": 62.16,
@@ -5135,9 +5135,9 @@
     "background_speech_fraction": 0.822
    },
    "211.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 8.92,
     "duration_s": 62.29,
     "vad_events": 2,
     "speech_s": 49.05,
@@ -5157,9 +5157,9 @@
     "background_speech_fraction": 0.451
    },
    "212.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.05,
     "duration_s": 64.89,
     "vad_events": 2,
     "speech_s": 51.24,
@@ -5311,9 +5311,9 @@
     "background_speech_fraction": 0.0
    },
    "219.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.59,
     "duration_s": 70.83,
     "vad_events": 4,
     "speech_s": 52.38,
@@ -5355,9 +5355,9 @@
     "background_speech_fraction": 0.927
    },
    "221.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 10.08,
     "duration_s": 68.26,
     "vad_events": 2,
     "speech_s": 37.23,
@@ -5553,9 +5553,9 @@
     "background_speech_fraction": 0.71
    },
    "230.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 9.01,
     "duration_s": 108.26,
     "vad_events": 2,
     "speech_s": 99.69,
@@ -6169,9 +6169,9 @@
     "background_speech_fraction": 0.907
    },
    "258.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 5.54,
     "duration_s": 102.19,
     "vad_events": 12,
     "speech_s": 79.02,
@@ -6323,9 +6323,9 @@
     "background_speech_fraction": 0.157
    },
    "265.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 11.11,
     "duration_s": 80.19,
     "vad_events": 4,
     "speech_s": 66.84,
@@ -6655,9 +6655,9 @@
     "background_speech_fraction": 0.0
    },
    "184.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 12.93,
     "duration_s": 68.51,
     "vad_events": 3,
     "speech_s": 41.82,
@@ -6853,9 +6853,9 @@
     "background_speech_fraction": 0.52
    },
    "193.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 7.95,
     "duration_s": 69.61,
     "vad_events": 5,
     "speech_s": 52.47,
@@ -7249,9 +7249,9 @@
     "background_speech_fraction": 0.257
    },
    "211.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 8.92,
     "duration_s": 62.29,
     "vad_events": 2,
     "speech_s": 39.0,
@@ -7271,9 +7271,9 @@
     "background_speech_fraction": 0.0
    },
    "212.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.05,
     "duration_s": 64.89,
     "vad_events": 2,
     "speech_s": 41.34,
@@ -7425,9 +7425,9 @@
     "background_speech_fraction": 0.0
    },
    "219.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 11.59,
     "duration_s": 70.83,
     "vad_events": 8,
     "speech_s": 41.61,
@@ -7469,9 +7469,9 @@
     "background_speech_fraction": 0.636
    },
    "221.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 10.08,
     "duration_s": 68.26,
     "vad_events": 3,
     "speech_s": 36.48,
@@ -7667,9 +7667,9 @@
     "background_speech_fraction": 0.615
    },
    "230.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 9.01,
     "duration_s": 108.26,
     "vad_events": 2,
     "speech_s": 79.68,
@@ -8283,9 +8283,9 @@
     "background_speech_fraction": 0.598
    },
    "258.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "secondary",
+    "background_tail_s": 5.54,
     "duration_s": 102.19,
     "vad_events": 12,
     "speech_s": 66.42,
@@ -8437,9 +8437,9 @@
     "background_speech_fraction": 0.0
    },
    "265.wav": {
-    "ends_with_background": false,
-    "last_label": "mix",
-    "background_tail_s": null,
+    "ends_with_background": true,
+    "last_label": "noise",
+    "background_tail_s": 11.11,
     "duration_s": 80.19,
     "vad_events": 2,
     "speech_s": 61.38,
