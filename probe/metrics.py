@@ -46,6 +46,11 @@ BACKGROUND_LABELS = {"secondary", "noise"}
 
 Span = tuple[float, float]
 
+# How far before the caller's labelled end a decision still counts as having
+# declared that turn. The labels run past the voice, so a detector that is right
+# can decide just inside the last span; see gap_metrics.
+FINAL_TOL_S = 1.5
+
 
 def spans(meta: dict, labels: set[str]) -> list[Span]:
     return [(s["start"], s["end"]) for s in meta.get("segments") or [] if s["label"] in labels]
@@ -100,12 +105,18 @@ def score(x: np.ndarray, meta: dict, vad: list[Span]) -> dict:
     # Turn-end delay is only testable where background outlasts the caller. On a
     # file that ends with the primary still talking there is nothing for a filter
     # to cut, and averaging those in would dilute the effect toward zero.
+    # The last segment in the list is not always the last one in time. Ten of
+    # the 96 ``work`` files list theirs out of order -- 194.wav ends its list
+    # with a span at 22.2s, four spans before the one that ends at 88.4s. Taking
+    # segs[-1] excluded nine files that do end with background from the
+    # turn-end population, and that was wrong in the first published run.
     segs = meta.get("segments") or []
-    last_label = segs[-1]["label"] if segs else None
+    last_seg = max(segs, key=lambda s: s["end"]) if segs else None
+    last_label = last_seg["label"] if last_seg else None
     ends_with_background = last_label in BACKGROUND_LABELS
     tail_s = None
     if ends_with_background and last_primary_end is not None:
-        tail_s = round(segs[-1]["end"] - last_primary_end, 2)
+        tail_s = round(last_seg["end"] - last_primary_end, 2)
 
     speech = total(vad)
     primary_s, background_s = total(pri), total(bg)
@@ -275,6 +286,7 @@ def gap_metrics(
     meta: dict,
     decisions: list[float],
     buckets: tuple[float, ...] = (0.5, 1.0, 2.0, 5.0),
+    final_tol_s: float = FINAL_TOL_S,
 ) -> dict:
     """Score turn decisions against the caller's pauses and their final stop.
 
@@ -283,6 +295,25 @@ def gap_metrics(
     **The final turn.** After the caller's last labelled span there is nothing
     more coming, so a turn should be declared. ``final_delay_s`` is the decision
     timestamp minus that labelled end -- the dead air a caller waits through.
+
+    That number takes only a decision strictly *after* the labelled end, and
+    that is too strict to be a measurement. alkove's maintainer found why: these
+    labels run about 0.2s past the voice in the median, while Cue decides about
+    0.3s after the voice stops -- so its decision can land just inside the last
+    span and be discarded as "never declared". The first published run reported
+    71 such files on ``Focus -> Cue``; the detector had in fact declared most of
+    them.
+
+    ``final_delay_tol_s`` is his rule: the **last** decision at or after
+    ``final_end - final_tol_s``, with the delay allowed to go negative. Taking
+    the last rather than the first is what "no new speech before the end"
+    amounts to in practice -- had the caller carried on, a later decision would
+    have closed the turn they actually finished, and that is the one to score.
+
+    ``tail_after_final_s`` keeps the remaining failures honest. When the labels
+    stop within a breath of the caller's last word there is no room left in the
+    file to declare anything, and a detector should not be marked down for a
+    turn that had nowhere to land.
 
     **The pauses.** Every earlier gap is a chance to be wrong. A decision taken
     in a long gap is a correct handover; one taken in a short gap cut the caller
@@ -296,7 +327,15 @@ def gap_metrics(
     """
     pri = sorted(spans(meta, PRIMARY_LABELS))
     if not pri:
-        return {"gaps": 0, "final_delay_s": None, "by_bucket": {}, "premature": 0}
+        return {
+            "gaps": 0,
+            "premature": 0,
+            "by_bucket": {},
+            "final_delay_s": None,
+            "final_delay_tol_s": None,
+            "final_tol_s": final_tol_s,
+            "tail_after_final_s": None,
+        }
 
     decisions = sorted(decisions)
     gaps = gaps_between(meta)
@@ -328,6 +367,14 @@ def gap_metrics(
         del row["into_gap_s"], row["into_gap_frac"]
 
     final = next((t for t in decisions if t > final_end), None)
+    # the maintainer's rule: the last decision from final_tol_s before the
+    # labelled end onwards, so a decision that beat the label is still a
+    # decision rather than a miss
+    near = [t for t in decisions if t >= final_end - final_tol_s]
+    tol = near[-1] if near else None
+    # max, not segs[-1]: these lists are not always in time order (see score)
+    segs = meta.get("segments") or []
+    tail = round(max(s["end"] for s in segs) - final_end, 2) if segs else None
     return {
         "gaps": len(gaps),
         "premature": premature,
@@ -335,4 +382,9 @@ def gap_metrics(
         "by_bucket": by_bucket,
         "final_end_s": round(final_end, 2),
         "final_delay_s": None if final is None else round(final - final_end, 2),
+        "final_delay_tol_s": None if tol is None else round(tol - final_end, 2),
+        "final_tol_s": final_tol_s,
+        # seconds of labels left after the caller's last word: 0 means the file
+        # ends on it, and no detector could have declared anything
+        "tail_after_final_s": tail,
     }

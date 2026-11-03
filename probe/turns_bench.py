@@ -36,10 +36,19 @@ from probe.metrics import gap_metrics
 
 MODELS = ("focus", "cue")
 
-# What a LiveKit agent waits before acting: Silero declares end of speech after
-# MIN_SILENCE of quiet, and the session then holds for min_delay. The caller
-# experiences the sum, measured from when they actually stopped.
+# What a LiveKit agent waits before acting, measured from when the caller
+# actually stopped. The first run added MIN_SILENCE and min_delay together; the
+# maintainer read `audio_recognition.py` and showed that is a double count:
+#
+#     extra_sleep = min_delay + last_speaking_time - now
+#
+# min_delay runs from the *backdated* end of speech, and by the time Silero
+# fires, MIN_SILENCE has already elapsed -- so extra_sleep is negative and the
+# agent waits no longer. The decision lands at end + max(MIN_SILENCE,
+# min_delay), which with LiveKit's defaults is end + 0.55s, not end + 1.05s.
+# Every silero number in the first published run was 0.5s too high.
 MIN_DELAY = 0.5
+DECIDES_AFTER = max(vte.MIN_SILENCE, MIN_DELAY)
 
 
 def native(path: Path) -> tuple[np.ndarray, int]:
@@ -68,26 +77,32 @@ def main() -> None:
     tp = alkove.TurnParams()
     print(f"{split}: {len(rows)} files | alkove {getattr(alkove, '__version__', '?')} | "
           f"TurnParams(threshold={tp.threshold}, min_pause={tp.min_pause}, max_pause={tp.max_pause})")
-    print(f"  baseline: silero end + min_silence {vte.MIN_SILENCE}s + min_delay {MIN_DELAY}s", flush=True)
+    print(f"  baseline: silero end + max(min_silence {vte.MIN_SILENCE}s, min_delay {MIN_DELAY}s) "
+          f"= end + {DECIDES_AFTER}s", flush=True)
 
     out: dict[str, dict] = {c: {} for c in ("raw_cue", "focus_cue", "silero")}
+    # Every decision timestamp, kept beside the scores. Changing a scoring rule
+    # has twice now meant running the models over all 265 files again for
+    # numbers that were already computed; with these saved, a re-score is
+    # arithmetic. `summarise.py --rescore` reads them.
+    raw: dict[str, dict] = {c: {} for c in out}
     t0 = time.time()
     for i, meta in enumerate(rows, 1):
         path = root / "raw" / meta["file_name"]
         if not path.exists():
             continue
         x, sr = native(path)
+        name = meta["file_name"]
 
-        out["raw_cue"][meta["file_name"]] = gap_metrics(
-            meta, turnends(alkove.Turns(models, sr).push(x))
-        )
+        decisions = {"raw_cue": turnends(alkove.Turns(models, sr).push(x))}
         _audio, events = alkove.Live(models, sr, turn=True).push(x)
-        out["focus_cue"][meta["file_name"]] = gap_metrics(meta, turnends(events))
-
+        decisions["focus_cue"] = turnends(events)
         spans = segments_from(load_16k(path))
-        out["silero"][meta["file_name"]] = gap_metrics(
-            meta, [e + vte.MIN_SILENCE + MIN_DELAY for _, e in spans]
-        )
+        decisions["silero"] = [e + DECIDES_AFTER for _, e in spans]
+
+        for cond, ts in decisions.items():
+            out[cond][name] = gap_metrics(meta, ts)
+            raw[cond][name] = [round(t, 3) for t in ts]
 
         if i % 10 == 0:
             per = (time.time() - t0) / i
@@ -98,10 +113,17 @@ def main() -> None:
     dest.write_text(
         json.dumps({"split": split, "alkove": getattr(alkove, "__version__", "?"),
                     "min_delay_s": MIN_DELAY, "min_silence_s": vte.MIN_SILENCE,
+                    "silero_decides_after_s": DECIDES_AFTER,
                     "clips": len(out["silero"]), "conditions": out}, indent=1),
         encoding="utf-8",
     )
-    print(f"\nwrote {dest}")
+    events_dest = Path("results") / f"turns_{split}_decisions.json"
+    events_dest.write_text(
+        json.dumps({"split": split, "alkove": getattr(alkove, "__version__", "?"),
+                    "silero_decides_after_s": DECIDES_AFTER, "decisions": raw}, indent=1),
+        encoding="utf-8",
+    )
+    print(f"\nwrote {dest} and {events_dest}")
 
 
 if __name__ == "__main__":

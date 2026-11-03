@@ -133,17 +133,23 @@ three clips and a fixed 5-second window.
 `call_center` is one of three splits. Running the same measurement over all 265 files changes
 the picture in a way one split did not show.
 
-**`work`** (96 files, 95 with background, 83 turn-end testable) — the richest background material
+**`work`** (96 files, 95 with background, 92 turn-end testable) — the richest background material
 in the dataset:
 
 | condition | false triggers | files affected | mean turn-end delay | rms primary | rms background | separation |
 | --- | --- | --- | --- | --- | --- | --- |
-| raw mix | **263** | 75 | 2.05s | 0.05528 | 0.01125 | 4.9 |
-| Krisp VI 2.5 | 19 | 14 | 0.35s | 0.05229 | 0.00058 | 90.2 |
+| raw mix | **263** | 75 | 1.99s | 0.05528 | 0.01125 | 4.9 |
+| Krisp VI 2.5 | 19 | 14 | 0.29s | 0.05229 | 0.00058 | 90.2 |
 | **VoxLock** | **12** | **9** | **-0.29s** | **0.05550** | **0.00029** | **194.5** |
 
 Same shape as `call_center`: VoxLock ahead on false triggers, and the only condition whose mean
-turn-end delay is negative — Krisp still leaves 0.35s on average.
+turn-end delay is negative — Krisp still leaves 0.29s on average.
+
+**Corrected 3 Nov:** this split said 83 turn-end testable, and it is 92. Ten of these 96 files
+list their label spans out of time order — `194.wav` ends its list with a span at 22.2s, four
+spans before the one that ends at 88.4s — and the testable check read the last span in the *list*
+rather than the last in time. Nine files that do end with background were dropped. Fixed in
+`metrics.py`; the means above moved by 0.06s and no comparison between conditions changed.
 
 **`phone_calls`** (63 files) is where it breaks, and the honest answer is two-sided.
 
@@ -269,12 +275,17 @@ turn-end numbers are omitted rather than published.
 | split | raw -> Silero | Focus -> Silero | raw -> Cue | Focus -> Cue | n |
 | --- | --- | --- | --- | --- | --- |
 | call_center, mean | 1.80s | 1.29s | 2.05s | **1.04s** | 52 |
-| work, mean | 2.05s | 1.50s | 2.89s | **0.83s** | 83 |
-| work, median | 0.06s | -0.11s | **0.78s** | **-0.19s** | 83 |
+| work, mean | 1.99s | 1.44s | 2.82s | **0.72s** | 92 |
+| work, median | 0.06s | -0.11s | **0.44s** | **-0.21s** | 92 |
 
 That `work` median is the clearest result in the set. **Cue on its own runs late on more than half
-the files** — a median of 0.78s, against Silero's 0.06s. Focus takes it to -0.19s. So Cue needs
+the files** — a median of 0.44s, against Silero's 0.06s. Focus takes it to -0.21s. So Cue needs
 Focus in a way Silero does not.
+
+**Corrected 3 Nov:** the `work` rows above were computed over 83 files, not the 92 that qualify,
+because of the span-ordering bug described earlier. The raw -> Cue median was published as 0.78s
+and is 0.44s — the largest single change the fix produced, and the one worth flagging, since it is
+the number this paragraph rests on. The direction holds and no ranking moved.
 
 **What this number is, and what it is not.** alkove's maintainer read `alkove_bench.py` and
 `metrics.py` against the core and corrected the framing, which is worth stating rather than leaving
@@ -342,25 +353,52 @@ above stand unchanged. Only the turn decision is new here.
 
 | condition | what it is |
 | --- | --- |
-| silero | `alkove` not involved: Silero's speech end, plus `min_silence` 0.55s, plus `min_delay` 0.5s |
+| silero | `alkove` not involved: Silero's speech end, plus `max(min_silence 0.55s, min_delay 0.5s)` |
 | raw -> Cue | `alkove.Turns(models, rate)` |
 | **Focus -> Cue** | **`alkove.Live(models, rate, turn=True)`** |
 
 Scored on `at`, the decision timestamp, not `end`, which is the backdated end of
 speech the first run measured. Files are read at their own rate.
 
+**Both of the numbers first published here were wrong, and the maintainer found
+both.** The tables below are the corrected ones; what changed is set out under
+each. Everything in this section was re-run on 3 Nov.
+
 ### Dead air after the caller's last word
 
 | split | silero | raw -> Cue | Focus -> Cue |
 | --- | --- | --- | --- |
-| call_center (106) | 0.87s | 0.48s | **0.41s** |
-| work (96) | 0.98s | 0.38s | **0.27s** |
-| phone_calls (63) | 0.94s | 0.24s | **0.19s** |
-| **all 265** | **0.93s** | 0.37s | **0.25s** |
+| call_center (106) | 0.47s (106) | 0.45s (101) | **0.24s** (103) |
+| work (96) | 0.57s (96) | 0.33s (94) | **0.13s** (95) |
+| phone_calls (63) | 0.45s (63) | 0.23s (52) | **0.18s** (57) |
+| **all 265** | **0.49s** (265) | 0.32s (247) | **0.18s** (255) |
 
-**Cue removes roughly two thirds of the dead air**, consistently on every split,
-and most on the band-limited one. That is the result, and it is a large one: a
-caller on `phone_calls` waits 0.19s instead of 0.94s.
+**Focus -> Cue decides about 0.3s sooner than VAD-only endpointing** — 0.18s
+against 0.49s over all 265 files. That is the result, and it is worth stating as
+the 0.3s it is rather than as a ratio: 0.18 against 0.49 is a two-thirds
+reduction arithmetically, but what a caller experiences is three tenths of a
+second.
+
+**Correction: the silero column was 0.5s too high.** It was published as 0.93s
+over all 265, by adding `min_silence` and `min_delay` together. The maintainer
+read `audio_recognition.py` and showed that is a double count:
+
+```
+extra_sleep = min_delay + last_speaking_time - now
+```
+
+`min_delay` runs from the *backdated* end of speech, and by the time Silero fires
+end of speech `min_silence` has already elapsed — so `extra_sleep` comes out
+negative and the agent waits no longer. The decision lands at
+`end + max(min_silence, min_delay)`, which on LiveKit's defaults is 0.55s, not
+1.05s. The headline then said Cue removed "roughly two thirds of the dead air"
+against a baseline that did not exist.
+
+The `Focus -> Cue` column moved too, 0.25s to 0.18s, for the separate reason in
+the next-but-one table: decisions that landed just inside the last labelled span
+were being discarded, and the discarded ones were the fast ones.
+
+The counts in brackets are the files where a final turn was declared at all.
 
 ### It is bought in the short pauses
 
@@ -370,50 +408,101 @@ gap took the floor mid-sentence.
 
 | pause length | silero | raw -> Cue | Focus -> Cue |
 | --- | --- | --- | --- |
-| under 0.5s (108) | **1%** | 20% | 21% |
-| 0.5 to 1s (16) | 12% | 56% | 62% |
-| over 5s (204) | **97%** | 93% | 85% |
+| under 0.5s (108) | **13%** | 20% | 21% |
+| 0.5 to 1s (16) | **69%** | 56% | 62% |
+| 1 to 2s (5) | 80% | 100% | 100% |
+| 2 to 5s (1) | 100% | 100% | 0% |
+| over 5s (204) | **95%** | 93% | 85% |
 
-Silero almost never fires inside a breath. Cue does it in a fifth of them, and in
-over half of the half-second-to-second pauses. That is the cost of the speed
-above, and the two tables should be read together.
+**This table is where correcting the baseline cost the most, and it cuts against
+the reading first published here.** With silero decided 0.5s earlier, its
+decisions land inside shorter pauses: 1% became 13% under half a second, and 12%
+became **69%** in the half-second-to-second band, where it is now *worse* than
+either Cue condition.
 
-### The finding that is not about latency
+That is not an artefact. A detector that fires 0.55s into any silence will fire
+inside almost every pause longer than 0.55s, and the 0.5-to-1s band is made of
+exactly those. **LiveKit's VAD-only endpointing interrupts sub-second pauses more
+often than Cue does**, and the earlier claim that Cue buys its speed by taking
+the floor mid-sentence was mostly the phantom 0.5s talking.
 
-| split | silero | raw -> Cue | Focus -> Cue |
-| --- | --- | --- | --- |
-| call_center (106) | 0 | 21 | 26 |
-| work (96) | 1 | 20 | **35** |
-| phone_calls (63) | 0 | 16 | 10 |
-| **total of 265** | **1** | 57 | **71** |
+What survives is narrower and still real: under half a second — a breath rather
+than a pause — silero is the more cautious of the three, 13% against 20-21%.
 
-**Focus -> Cue never declares a final turn at all on 71 files, 27% of the set.**
-Silero misses one. This is not a filter being slow, it is the end of the
-conversation going undetected, and on `work` it is more than a third of the
-clips. It also declares fewer of the long handovers -- 85% of gaps over five
-seconds against Silero's 97%, the same shape of problem.
+### The finding that was not a finding
 
-A turn detector that is three times faster when it fires, and silent on a
-quarter of calls, is a different trade from the headline number alone.
+The first run reported that `Focus -> Cue` **never declares a final turn on 71
+files, 27% of the set**, and called it the end of the conversation going
+undetected. That was wrong, and the maintainer said so plainly rather than
+accepting a number that damned his own model:
+
+> I don't think the head is missing those turns. It declares them slightly
+> *before* the labelled end.
+
+He was right. These labels run about 0.2s past the voice in the median, while Cue
+decides about 0.3s after the voice stops — so its decision lands just inside the
+last labelled span, and the scorer, which took only a decision strictly *after*
+that end, threw it away. Counting the last decision from 1.5s before the labelled
+end onwards:
+
+| condition | strictly after the end | within 1.5s of it | of those, no room to decide | unexplained |
+| --- | --- | --- | --- | --- |
+| silero | 16 | **0** | 0 | **0** |
+| raw -> Cue | 57 | **18** | 14 | **4** |
+| **Focus -> Cue** | **71** | **10** | **10** | **0** |
+
+**Focus -> Cue has no unexplained misses.** All ten remaining files end on the
+caller's last word — the labels stop within 0.45s of it, so there was nowhere in
+the file to put a decision and no detector could have made one. Nine of the ten
+are `phone_calls` and `call_center` clips that simply stop when the caller does.
+
+`raw -> Cue` has four genuine misses, all `call_center` and `work` files with one
+to two seconds of tail it declared nothing in. That is the one real failure the
+original 71 was pointing at, and it belongs to Cue without Focus.
+
+Silero's strict count went the other way, 1 to 16, for the same reason in reverse:
+decided 0.5s earlier, more of its decisions fall inside the last span. With the
+tolerance it misses none.
+
+**So the 71 was a scoring artefact, not a detector failure**, and the "silent on a
+quarter of calls" conclusion drawn from it is withdrawn.
 
 ### What this run does not establish
 
 - **`phone_calls` is testable for the first time**, since the metric no longer
   depends on how the file ends -- but it holds **7 gaps in total**, so its
   premature column is three fractions over seven and not a rate. Its final-delay
-  column rests on 47 to 63 files and is the strongest result in the set.
-- **One baseline, chosen.** The maintainer said "Silero's end + 0.5s
-  (`min_delay` default)". This uses the backdated end **plus** `min_silence`
-  0.55s **plus** `min_delay` 0.5s, on the reasoning that Silero only declares
-  end of speech after the silence has elapsed and the session waits after that,
-  so the sum is what a caller sits through. If the simpler reading was meant,
-  every silero number here is 0.55s too high.
+  column rests on 52 to 63 files and is the strongest result in the set.
+- **The baseline is `end + max(min_silence, min_delay)` = 0.55s**, after the
+  correction above. The first run added the two and was 0.5s too high
+  throughout. The flag it carried — "if the simpler reading was meant, every
+  silero number here is 0.55s too high" — named the risk and then published the
+  wrong column anyway, which is worth less than reading the source would have
+  been.
+- **The tolerance is 1.5s and it is a choice.** A decision up to 1.5s before the
+  labelled end counts as having declared that turn. It was the maintainer's
+  figure, it matches the median 0.2s of label overhang with room to spare, and
+  nothing here sweeps it. A tighter tolerance would restore some of the misses
+  the table above explains away.
 - **Default `TurnParams`** throughout: threshold 0.6, min_pause 0.3, max_pause
   1.5, on his instruction to keep Cue-alone at defaults. No sweep was run.
 
 Raw output: [`results/turns_call_center.json`](results/turns_call_center.json),
 [`turns_work.json`](results/turns_work.json),
 [`turns_phone_calls.json`](results/turns_phone_calls.json).
+
+Every decision timestamp is saved beside the scores, in
+[`turns_call_center_decisions.json`](results/turns_call_center_decisions.json)
+and its two siblings. The three tables above are generated, not assembled:
+
+```
+python -m probe.turns_summary results/turns_*.json              # from the scores
+python -m probe.turns_summary --rescore results/turns_*_decisions.json
+```
+
+`--rescore` rebuilds all three from the timestamps alone. Both of the corrections
+on this page were scoring-rule changes, and the first one cost a full re-run over
+all 265 files for numbers that were already on disk; the next one will not.
 
 ### What this does not establish
 

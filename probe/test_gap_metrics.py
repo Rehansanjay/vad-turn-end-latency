@@ -54,6 +54,36 @@ m = gap_metrics(CALLER, [])
 check("no decision at all leaves the delay unknown", m["final_delay_s"], None)
 
 print()
+print("the final turn, with the maintainer's tolerance")
+
+# The labels run past the voice, so a detector that is right can decide just
+# inside the last span. Strictly after the end that reads as never declared,
+# and it is what produced 71 false misses in the first published run.
+m = gap_metrics(CALLER, [8.8])
+check("a decision inside the last span is a miss, strictly", m["final_delay_s"], None)
+check("and a turn declared early, with tolerance", m["final_delay_tol_s"], -0.2)
+
+# further back than the tolerance is a real miss either way
+m = gap_metrics(CALLER, [7.2])
+check("beyond the tolerance it stays a miss", m["final_delay_tol_s"], None)
+
+# the last decision wins: had the caller carried on, a later one closed the
+# turn they actually finished
+m = gap_metrics(CALLER, [8.8, 9.6])
+check("the last decision is the one scored", m["final_delay_tol_s"], 0.6)
+
+m = gap_metrics(CALLER, [])
+check("still unknown with no decisions", m["final_delay_tol_s"], None)
+
+# no room to declare: these labels stop on the caller's last word
+check("labels ending on the caller leave no tail", m["tail_after_final_s"], 0.0)
+check(
+    "a background tail leaves room",
+    gap_metrics(meta((0.0, 2.0, "primary"), (2.0, 5.0, "noise")), [])["tail_after_final_s"],
+    3.0,
+)
+
+print()
 print("pauses, bucketed by length")
 
 # a decision in the 0.4s breath cut the caller off; one in the 3s gap did not
