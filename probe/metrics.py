@@ -255,3 +255,84 @@ def turn_metrics(
         "lag_s_max": round(max(lags), 2) if lags else None,
         "lag_turns": len(lags),
     }
+
+
+def gaps_between(meta: dict) -> list[Span]:
+    """The pauses between the caller's labelled spans.
+
+    alkove's maintainer pointed out where the signal actually is. A turn cannot
+    be declared while the detector still hears the caller, so a decision landing
+    *inside* a labelled span only happens when the detector has lost the voice --
+    which ``primary_recall`` already measures. What a turn detector is actually
+    judged on is the pauses: given a gap, did it declare the turn over before the
+    caller carried on, and how far into the gap did it do so.
+    """
+    pri = sorted(spans(meta, PRIMARY_LABELS))
+    return [(pri[i][1], pri[i + 1][0]) for i in range(len(pri) - 1) if pri[i + 1][0] > pri[i][1]]
+
+
+def gap_metrics(
+    meta: dict,
+    decisions: list[float],
+    buckets: tuple[float, ...] = (0.5, 1.0, 2.0, 5.0),
+) -> dict:
+    """Score turn decisions against the caller's pauses and their final stop.
+
+    Two things, and they are different questions.
+
+    **The final turn.** After the caller's last labelled span there is nothing
+    more coming, so a turn should be declared. ``final_delay_s`` is the decision
+    timestamp minus that labelled end -- the dead air a caller waits through.
+
+    **The pauses.** Every earlier gap is a chance to be wrong. A decision taken
+    in a long gap is a correct handover; one taken in a short gap cut the caller
+    off mid-sentence. Length is what separates the two, so gaps are bucketed by
+    it rather than pooled: a 0.4s breath and a 6s handover are not the same
+    event and averaging them says nothing.
+
+    ``into_gap`` is where in the pause the decision landed. Near 0 means the
+    detector fired the moment the voice stopped; near 1 means it waited almost
+    until the caller resumed.
+    """
+    pri = sorted(spans(meta, PRIMARY_LABELS))
+    if not pri:
+        return {"gaps": 0, "final_delay_s": None, "by_bucket": {}, "premature": 0}
+
+    decisions = sorted(decisions)
+    gaps = gaps_between(meta)
+    final_end = pri[-1][1]
+
+    def bucket_of(length: float) -> str:
+        for b in buckets:
+            if length < b:
+                return f"<{b:g}s"
+        return f">={buckets[-1]:g}s"
+
+    by_bucket: dict[str, dict] = {}
+    premature = 0
+    for g0, g1 in gaps:
+        name = bucket_of(g1 - g0)
+        row = by_bucket.setdefault(name, {"gaps": 0, "declared": 0, "into_gap_s": [], "into_gap_frac": []})
+        row["gaps"] += 1
+        hit = next((t for t in decisions if g0 < t <= g1), None)
+        if hit is not None:
+            row["declared"] += 1
+            row["into_gap_s"].append(hit - g0)
+            row["into_gap_frac"].append((hit - g0) / (g1 - g0))
+            premature += 1
+
+    for row in by_bucket.values():
+        row["into_gap_s_median"] = round(_median(row["into_gap_s"]), 2) if row["into_gap_s"] else None
+        row["into_gap_frac_median"] = round(_median(row["into_gap_frac"]), 3) if row["into_gap_frac"] else None
+        row["declared_rate"] = round(row["declared"] / row["gaps"], 3) if row["gaps"] else None
+        del row["into_gap_s"], row["into_gap_frac"]
+
+    final = next((t for t in decisions if t > final_end), None)
+    return {
+        "gaps": len(gaps),
+        "premature": premature,
+        "premature_rate": round(premature / len(gaps), 3) if gaps else None,
+        "by_bucket": by_bucket,
+        "final_end_s": round(final_end, 2),
+        "final_delay_s": None if final is None else round(final - final_end, 2),
+    }

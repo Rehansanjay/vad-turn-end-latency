@@ -1,0 +1,6387 @@
+{
+ "split": "work",
+ "alkove": "0.4.0",
+ "min_delay_s": 0.5,
+ "min_silence_s": 0.55,
+ "clips": 96,
+ "conditions": {
+  "raw_cue": {
+   "170.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.27,
+      "into_gap_frac_median": 0.011,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 98.11,
+    "final_delay_s": 0.32
+   },
+   "171.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.21,
+      "into_gap_frac_median": 0.441,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.07,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.8,
+    "final_delay_s": 0.12
+   },
+   "172.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.28,
+      "into_gap_frac_median": 0.015,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.65,
+    "final_delay_s": 0.18
+   },
+   "173.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.35,
+      "into_gap_frac_median": 0.62,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.32,
+      "into_gap_frac_median": 0.015,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.09,
+    "final_delay_s": 0.05
+   },
+   "174.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.16,
+      "into_gap_frac_median": 0.202,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.22,
+      "into_gap_frac_median": 0.011,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.56,
+    "final_delay_s": 13.54
+   },
+   "175.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.26,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 76.55,
+    "final_delay_s": 0.73
+   },
+   "176.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.06,
+      "into_gap_frac_median": 0.138,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 73.86,
+    "final_delay_s": 0.69
+   },
+   "177.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.06,
+      "into_gap_frac_median": 0.34,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.4,
+      "into_gap_frac_median": 0.079,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 80.28,
+    "final_delay_s": 0.39
+   },
+   "178.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.02,
+      "into_gap_frac_median": 0.102,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.02,
+      "into_gap_frac_median": 0.255,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.8,
+    "final_delay_s": 0.1
+   },
+   "179.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.22,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.87,
+    "final_delay_s": 0.04
+   },
+   "180.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.47,
+      "into_gap_frac_median": 0.02,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.85,
+    "final_delay_s": 0.54
+   },
+   "181.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.505,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.0,
+      "into_gap_frac_median": 0.0,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 81.43,
+    "final_delay_s": null
+   },
+   "182.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.16,
+      "into_gap_frac_median": 0.937,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.21,
+      "into_gap_frac_median": 0.285,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 76.03,
+    "final_delay_s": null
+   },
+   "183.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.14,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.7,
+    "final_delay_s": null
+   },
+   "184.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 13.01,
+      "into_gap_frac_median": 0.889,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.58,
+    "final_delay_s": 0.07
+   },
+   "185.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.27,
+      "into_gap_frac_median": 0.019,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.78,
+    "final_delay_s": 0.04
+   },
+   "186.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.75,
+      "into_gap_frac_median": 0.234,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 58.07,
+    "final_delay_s": 12.85
+   },
+   "187.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.003,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.39,
+    "final_delay_s": null
+   },
+   "188.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.26,
+      "into_gap_frac_median": 0.062,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.43,
+    "final_delay_s": null
+   },
+   "189.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.13,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.32,
+    "final_delay_s": 0.18
+   },
+   "190.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.88,
+      "into_gap_frac_median": 0.044,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.46,
+    "final_delay_s": 0.15
+   },
+   "191.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.36,
+      "into_gap_frac_median": 0.96,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.38,
+      "into_gap_frac_median": 0.019,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.98,
+    "final_delay_s": 0.9
+   },
+   "192.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.13,
+      "into_gap_frac_median": 0.202,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 118.82,
+    "final_delay_s": 5.59
+   },
+   "193.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 61.66,
+    "final_delay_s": 2.36
+   },
+   "194.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 13.07,
+      "into_gap_frac_median": 0.361,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 88.44,
+    "final_delay_s": null
+   },
+   "195.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 133.21,
+    "final_delay_s": 0.05
+   },
+   "196.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<2s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.18,
+      "into_gap_frac_median": 0.099,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.14,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 93.74,
+    "final_delay_s": 6.16
+   },
+   "197.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.4,
+      "into_gap_frac_median": 0.017,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.95,
+    "final_delay_s": 0.37
+   },
+   "198.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.312,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.13,
+    "final_delay_s": 0.87
+   },
+   "199.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.38,
+      "into_gap_frac_median": 0.382,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.2,
+      "into_gap_frac_median": 0.22,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.12,
+    "final_delay_s": 3.0
+   },
+   "200.wav": {
+    "gaps": 4,
+    "premature": 1,
+    "premature_rate": 0.25,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 3,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.72,
+      "into_gap_frac_median": 0.109,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 59.36,
+    "final_delay_s": 2.56
+   },
+   "201.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.24,
+      "into_gap_frac_median": 0.014,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.65,
+    "final_delay_s": 0.05
+   },
+   "202.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.01,
+      "into_gap_frac_median": 0.102,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 73.13,
+    "final_delay_s": 0.13
+   },
+   "203.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.32,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 105.61,
+    "final_delay_s": 0.11
+   },
+   "204.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.528,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.73,
+      "into_gap_frac_median": 0.033,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.72,
+    "final_delay_s": null
+   },
+   "205.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.29,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 103.77,
+    "final_delay_s": null
+   },
+   "206.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.58,
+      "into_gap_frac_median": 0.027,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.82,
+    "final_delay_s": null
+   },
+   "207.wav": {
+    "gaps": 3,
+    "premature": 2,
+    "premature_rate": 0.667,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.15,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     },
+     "<5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.02,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 78.14,
+    "final_delay_s": null
+   },
+   "208.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 69.51,
+    "final_delay_s": 0.06
+   },
+   "209.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.0,
+      "into_gap_frac_median": 0.0,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 70.65,
+    "final_delay_s": 3.03
+   },
+   "210.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.22,
+      "into_gap_frac_median": 0.011,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 60.72,
+    "final_delay_s": null
+   },
+   "211.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.31,
+      "into_gap_frac_median": 0.024,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.36,
+    "final_delay_s": 0.31
+   },
+   "212.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.12,
+      "into_gap_frac_median": 0.093,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.84,
+    "final_delay_s": 0.28
+   },
+   "213.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.2,
+      "into_gap_frac_median": 0.831,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.01,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 56.99,
+    "final_delay_s": 0.28
+   },
+   "214.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.29,
+      "into_gap_frac_median": 0.021,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.27,
+    "final_delay_s": 0.29
+   },
+   "215.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 11.27,
+      "into_gap_frac_median": 0.293,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 99.58,
+    "final_delay_s": 0.14
+   },
+   "216.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.74,
+      "into_gap_frac_median": 0.162,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 101.68,
+    "final_delay_s": 11.78
+   },
+   "217.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 55.61,
+    "final_delay_s": 0.04
+   },
+   "218.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.159,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.02,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.12,
+    "final_delay_s": 0.65
+   },
+   "219.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.99,
+      "into_gap_frac_median": 0.06,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 59.24,
+    "final_delay_s": 0.13
+   },
+   "220.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.13,
+      "into_gap_frac_median": 0.779,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.61,
+      "into_gap_frac_median": 0.146,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.88,
+    "final_delay_s": 11.58
+   },
+   "221.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 58.19,
+    "final_delay_s": 0.1
+   },
+   "222.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.009,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.06,
+    "final_delay_s": 1.19
+   },
+   "223.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.25,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.07,
+    "final_delay_s": null
+   },
+   "224.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 18.52,
+      "into_gap_frac_median": 0.428,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 90.16,
+    "final_delay_s": 4.31
+   },
+   "225.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.15,
+      "into_gap_frac_median": 0.354,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.54,
+      "into_gap_frac_median": 0.101,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.64,
+    "final_delay_s": 0.09
+   },
+   "226.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.2,
+      "into_gap_frac_median": 0.009,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.9,
+    "final_delay_s": 2.63
+   },
+   "227.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.46,
+      "into_gap_frac_median": 0.278,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.25,
+    "final_delay_s": 4.44
+   },
+   "228.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 8.06,
+      "into_gap_frac_median": 0.378,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 86.92,
+    "final_delay_s": 0.14
+   },
+   "229.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.07,
+      "into_gap_frac_median": 0.002,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 98.36,
+    "final_delay_s": 0.76
+   },
+   "230.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.29,
+      "into_gap_frac_median": 0.399,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 99.03,
+    "final_delay_s": 4.71
+   },
+   "231.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.03,
+      "into_gap_frac_median": 0.002,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.9,
+    "final_delay_s": null
+   },
+   "232.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.06,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 62.65,
+    "final_delay_s": 3.44
+   },
+   "233.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.246,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 9.44,
+      "into_gap_frac_median": 0.485,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.74,
+    "final_delay_s": 0.0
+   },
+   "234.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.537,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 80.33,
+    "final_delay_s": 0.01
+   },
+   "235.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 11.3,
+      "into_gap_frac_median": 0.616,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 95.55,
+    "final_delay_s": null
+   },
+   "236.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.21,
+      "into_gap_frac_median": 0.525,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.4,
+      "into_gap_frac_median": 0.022,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.22,
+    "final_delay_s": 0.18
+   },
+   "237.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.04,
+      "into_gap_frac_median": 0.002,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.26,
+    "final_delay_s": 0.09
+   },
+   "238.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.33,
+      "into_gap_frac_median": 0.012,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.73,
+    "final_delay_s": 0.69
+   },
+   "239.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.29,
+      "into_gap_frac_median": 0.646,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.04,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 102.89,
+    "final_delay_s": 0.13
+   },
+   "240.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.77,
+      "into_gap_frac_median": 0.116,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.63,
+    "final_delay_s": 0.55
+   },
+   "241.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.64,
+      "into_gap_frac_median": 0.305,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.88,
+    "final_delay_s": null
+   },
+   "242.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 87.29,
+    "final_delay_s": null
+   },
+   "243.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.76,
+      "into_gap_frac_median": 0.13,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 81.75,
+    "final_delay_s": 0.54
+   },
+   "244.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.06,
+      "into_gap_frac_median": 0.059,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 87.82,
+    "final_delay_s": 1.94
+   },
+   "245.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.21,
+      "into_gap_frac_median": 0.074,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 108.84,
+    "final_delay_s": 0.36
+   },
+   "246.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.58,
+      "into_gap_frac_median": 0.022,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.1,
+    "final_delay_s": 2.18
+   },
+   "247.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 91.24,
+    "final_delay_s": 0.35
+   },
+   "248.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 74.13,
+    "final_delay_s": 0.03
+   },
+   "249.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.83,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.14,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 74.16,
+    "final_delay_s": null
+   },
+   "250.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.18,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.59,
+    "final_delay_s": 0.46
+   },
+   "251.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.02,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.08,
+    "final_delay_s": 0.3
+   },
+   "252.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.91,
+      "into_gap_frac_median": 0.158,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.97,
+    "final_delay_s": 0.02
+   },
+   "253.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.77,
+      "into_gap_frac_median": 0.026,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 95.12,
+    "final_delay_s": null
+   },
+   "254.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 10.37,
+      "into_gap_frac_median": 0.504,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.06,
+    "final_delay_s": 3.53
+   },
+   "255.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 9.06,
+      "into_gap_frac_median": 0.566,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.32,
+    "final_delay_s": 0.15
+   },
+   "256.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 17.41,
+      "into_gap_frac_median": 0.667,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.46,
+    "final_delay_s": 5.15
+   },
+   "257.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.12,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 89.6,
+    "final_delay_s": 2.38
+   },
+   "258.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.13,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.65,
+    "final_delay_s": 0.37
+   },
+   "259.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.16,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.13,
+    "final_delay_s": 8.83
+   },
+   "260.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 5.6,
+      "into_gap_frac_median": 0.294,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 60.84,
+    "final_delay_s": 0.63
+   },
+   "261.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.34,
+    "final_delay_s": 1.26
+   },
+   "262.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.12,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.97,
+    "final_delay_s": 1.46
+   },
+   "263.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.15,
+      "into_gap_frac_median": 0.76,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 9.14,
+      "into_gap_frac_median": 0.372,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.08,
+    "final_delay_s": null
+   },
+   "264.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.42,
+      "into_gap_frac_median": 0.023,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.9,
+    "final_delay_s": 0.7
+   },
+   "265.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 69.08,
+    "final_delay_s": null
+   }
+  },
+  "focus_cue": {
+   "170.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.25,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 98.11,
+    "final_delay_s": 0.21
+   },
+   "171.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.2,
+      "into_gap_frac_median": 0.408,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 11.82,
+      "into_gap_frac_median": 0.708,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.8,
+    "final_delay_s": 0.13
+   },
+   "172.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.26,
+      "into_gap_frac_median": 0.014,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.65,
+    "final_delay_s": 0.16
+   },
+   "173.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.33,
+      "into_gap_frac_median": 0.591,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.3,
+      "into_gap_frac_median": 0.014,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.09,
+    "final_delay_s": 0.04
+   },
+   "174.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.14,
+      "into_gap_frac_median": 0.182,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.2,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.56,
+    "final_delay_s": null
+   },
+   "175.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.36,
+      "into_gap_frac_median": 0.014,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 76.55,
+    "final_delay_s": 0.36
+   },
+   "176.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.83,
+      "into_gap_frac_median": 0.173,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 73.86,
+    "final_delay_s": 0.22
+   },
+   "177.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.08,
+      "into_gap_frac_median": 0.415,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 17.48,
+      "into_gap_frac_median": 0.576,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 80.28,
+    "final_delay_s": 0.38
+   },
+   "178.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.787,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 75.8,
+    "final_delay_s": 0.06
+   },
+   "179.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.21,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.87,
+    "final_delay_s": null
+   },
+   "180.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.34,
+      "into_gap_frac_median": 0.649,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.42,
+      "into_gap_frac_median": 0.018,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.85,
+    "final_delay_s": null
+   },
+   "181.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.576,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.14,
+      "into_gap_frac_median": 0.142,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 81.43,
+    "final_delay_s": 0.42
+   },
+   "182.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.15,
+      "into_gap_frac_median": 0.846,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.09,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 76.03,
+    "final_delay_s": null
+   },
+   "183.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 82.7,
+    "final_delay_s": null
+   },
+   "184.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 13.32,
+      "into_gap_frac_median": 0.91,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.58,
+    "final_delay_s": 0.02
+   },
+   "185.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.59,
+      "into_gap_frac_median": 0.04,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.78,
+    "final_delay_s": 0.18
+   },
+   "186.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 7.61,
+      "into_gap_frac_median": 0.475,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 58.07,
+    "final_delay_s": null
+   },
+   "187.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.06,
+      "into_gap_frac_median": 0.002,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.39,
+    "final_delay_s": null
+   },
+   "188.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.44,
+      "into_gap_frac_median": 0.022,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.43,
+    "final_delay_s": null
+   },
+   "189.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.32,
+    "final_delay_s": 0.55
+   },
+   "190.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.82,
+      "into_gap_frac_median": 0.139,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.46,
+    "final_delay_s": 0.04
+   },
+   "191.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.37,
+      "into_gap_frac_median": 0.998,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.33,
+      "into_gap_frac_median": 0.017,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.98,
+    "final_delay_s": 1.25
+   },
+   "192.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.71,
+      "into_gap_frac_median": 0.023,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 118.82,
+    "final_delay_s": null
+   },
+   "193.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.31,
+      "into_gap_frac_median": 0.232,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.66,
+    "final_delay_s": null
+   },
+   "194.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.09,
+      "into_gap_frac_median": 0.002,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 88.44,
+    "final_delay_s": null
+   },
+   "195.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 21.09,
+      "into_gap_frac_median": 0.568,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 133.21,
+    "final_delay_s": null
+   },
+   "196.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<2s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.107,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.12,
+      "into_gap_frac_median": 0.003,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 93.74,
+    "final_delay_s": null
+   },
+   "197.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.95,
+    "final_delay_s": 0.39
+   },
+   "198.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.12,
+      "into_gap_frac_median": 0.352,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.03,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.13,
+    "final_delay_s": 0.29
+   },
+   "199.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.36,
+      "into_gap_frac_median": 0.366,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.55,
+      "into_gap_frac_median": 0.186,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.12,
+    "final_delay_s": 5.35
+   },
+   "200.wav": {
+    "gaps": 4,
+    "premature": 1,
+    "premature_rate": 0.25,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 3,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.71,
+      "into_gap_frac_median": 0.045,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 59.36,
+    "final_delay_s": 2.6
+   },
+   "201.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.13,
+      "into_gap_frac_median": 0.338,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 65.65,
+    "final_delay_s": 0.03
+   },
+   "202.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.05,
+      "into_gap_frac_median": 0.524,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 73.13,
+    "final_delay_s": 0.15
+   },
+   "203.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.22,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 105.61,
+    "final_delay_s": 0.1
+   },
+   "204.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.15,
+      "into_gap_frac_median": 0.738,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 68.72,
+    "final_delay_s": null
+   },
+   "205.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.27,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 103.77,
+    "final_delay_s": null
+   },
+   "206.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.53,
+      "into_gap_frac_median": 0.025,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.82,
+    "final_delay_s": null
+   },
+   "207.wav": {
+    "gaps": 3,
+    "premature": 1,
+    "premature_rate": 0.333,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.07,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     },
+     "<5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 78.14,
+    "final_delay_s": null
+   },
+   "208.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 69.51,
+    "final_delay_s": 0.05
+   },
+   "209.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.21,
+      "into_gap_frac_median": 0.211,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 70.65,
+    "final_delay_s": null
+   },
+   "210.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.14,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 60.72,
+    "final_delay_s": null
+   },
+   "211.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.12,
+      "into_gap_frac_median": 0.009,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.36,
+    "final_delay_s": 0.32
+   },
+   "212.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.51,
+      "into_gap_frac_median": 0.042,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.84,
+    "final_delay_s": 0.3
+   },
+   "213.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.38,
+      "into_gap_frac_median": 0.03,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 56.99,
+    "final_delay_s": null
+   },
+   "214.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.27,
+      "into_gap_frac_median": 0.02,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.27,
+    "final_delay_s": 0.27
+   },
+   "215.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 7.08,
+      "into_gap_frac_median": 0.184,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 99.58,
+    "final_delay_s": 0.12
+   },
+   "216.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.52,
+      "into_gap_frac_median": 0.085,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 101.68,
+    "final_delay_s": null
+   },
+   "217.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.15,
+      "into_gap_frac_median": 0.306,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 9.99,
+      "into_gap_frac_median": 0.754,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.61,
+    "final_delay_s": 0.02
+   },
+   "218.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.136,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.01,
+      "into_gap_frac_median": 0.0,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.12,
+    "final_delay_s": 0.64
+   },
+   "219.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.88,
+      "into_gap_frac_median": 0.053,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 59.24,
+    "final_delay_s": 0.14
+   },
+   "220.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.12,
+      "into_gap_frac_median": 0.686,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.88,
+    "final_delay_s": 9.88
+   },
+   "221.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.05,
+      "into_gap_frac_median": 0.003,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 58.19,
+    "final_delay_s": 0.06
+   },
+   "222.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.06,
+    "final_delay_s": 0.54
+   },
+   "223.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.02,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.07,
+    "final_delay_s": null
+   },
+   "224.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 18.53,
+      "into_gap_frac_median": 0.429,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 90.16,
+    "final_delay_s": null
+   },
+   "225.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.13,
+      "into_gap_frac_median": 0.317,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.03,
+      "into_gap_frac_median": 0.121,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.64,
+    "final_delay_s": 1.27
+   },
+   "226.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.9,
+    "final_delay_s": 1.14
+   },
+   "227.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.29,
+      "into_gap_frac_median": 0.271,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.25,
+    "final_delay_s": 0.94
+   },
+   "228.wav": {
+    "gaps": 1,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 86.92,
+    "final_delay_s": 0.33
+   },
+   "229.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.33,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 98.36,
+    "final_delay_s": 0.8
+   },
+   "230.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.38,
+      "into_gap_frac_median": 0.088,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 99.03,
+    "final_delay_s": null
+   },
+   "231.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.02,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.9,
+    "final_delay_s": null
+   },
+   "232.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.705,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 62.65,
+    "final_delay_s": 0.07
+   },
+   "233.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.17,
+      "into_gap_frac_median": 0.225,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.08,
+      "into_gap_frac_median": 0.21,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.74,
+    "final_delay_s": null
+   },
+   "234.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.16,
+      "into_gap_frac_median": 0.487,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.2,
+      "into_gap_frac_median": 0.009,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 80.33,
+    "final_delay_s": 0.03
+   },
+   "235.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.66,
+      "into_gap_frac_median": 0.2,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 95.55,
+    "final_delay_s": null
+   },
+   "236.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.484,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.32,
+      "into_gap_frac_median": 0.017,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.22,
+    "final_delay_s": 0.2
+   },
+   "237.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.03,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.26,
+    "final_delay_s": 0.08
+   },
+   "238.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.26,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.73,
+    "final_delay_s": 0.49
+   },
+   "239.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.03,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 102.89,
+    "final_delay_s": 0.11
+   },
+   "240.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.35,
+      "into_gap_frac_median": 0.877,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.81,
+      "into_gap_frac_median": 0.055,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.63,
+    "final_delay_s": 0.14
+   },
+   "241.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.32,
+      "into_gap_frac_median": 0.06,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.88,
+    "final_delay_s": 0.02
+   },
+   "242.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 87.29,
+    "final_delay_s": 0.69
+   },
+   "243.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.16,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 81.75,
+    "final_delay_s": 0.49
+   },
+   "244.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.0,
+      "into_gap_frac_median": 0.0,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 87.82,
+    "final_delay_s": null
+   },
+   "245.wav": {
+    "gaps": 1,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 108.84,
+    "final_delay_s": 0.25
+   },
+   "246.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.53,
+      "into_gap_frac_median": 0.021,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.1,
+    "final_delay_s": 0.58
+   },
+   "247.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 18.66,
+      "into_gap_frac_median": 0.454,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 91.24,
+    "final_delay_s": 0.37
+   },
+   "248.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.03,
+      "into_gap_frac_median": 0.001,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 74.13,
+    "final_delay_s": 0.02
+   },
+   "249.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.898,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.24,
+      "into_gap_frac_median": 0.012,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 74.16,
+    "final_delay_s": null
+   },
+   "250.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.006,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.59,
+    "final_delay_s": 0.27
+   },
+   "251.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 82.08,
+    "final_delay_s": 0.25
+   },
+   "252.wav": {
+    "gaps": 1,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 96.97,
+    "final_delay_s": 0.15
+   },
+   "253.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.57,
+      "into_gap_frac_median": 0.02,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 95.12,
+    "final_delay_s": null
+   },
+   "254.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.57,
+      "into_gap_frac_median": 0.028,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.06,
+    "final_delay_s": null
+   },
+   "255.wav": {
+    "gaps": 1,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 64.32,
+    "final_delay_s": 0.13
+   },
+   "256.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 4.13,
+      "into_gap_frac_median": 0.158,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.46,
+    "final_delay_s": null
+   },
+   "257.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 89.6,
+    "final_delay_s": null
+   },
+   "258.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.004,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.65,
+    "final_delay_s": 0.3
+   },
+   "259.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.14,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.13,
+    "final_delay_s": 7.61
+   },
+   "260.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 60.84,
+    "final_delay_s": 0.52
+   },
+   "261.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.18,
+      "into_gap_frac_median": 0.007,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.34,
+    "final_delay_s": 1.54
+   },
+   "262.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.1,
+      "into_gap_frac_median": 0.003,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.97,
+    "final_delay_s": 0.48
+   },
+   "263.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 14.13,
+      "into_gap_frac_median": 0.575,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.08,
+    "final_delay_s": null
+   },
+   "264.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.64,
+      "into_gap_frac_median": 0.035,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.9,
+    "final_delay_s": 0.62
+   },
+   "265.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.09,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 69.08,
+    "final_delay_s": null
+   }
+  },
+  "silero": {
+   "170.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.03,
+      "into_gap_frac_median": 0.042,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 98.11,
+    "final_delay_s": 1.15
+   },
+   "171.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.18,
+      "into_gap_frac_median": 0.131,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.8,
+    "final_delay_s": 0.91
+   },
+   "172.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.03,
+      "into_gap_frac_median": 0.054,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.65,
+    "final_delay_s": 1.01
+   },
+   "173.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.12,
+      "into_gap_frac_median": 0.054,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.09,
+    "final_delay_s": 0.8
+   },
+   "174.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.19,
+      "into_gap_frac_median": 0.058,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.56,
+    "final_delay_s": 2.13
+   },
+   "175.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.1,
+      "into_gap_frac_median": 0.042,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 76.55,
+    "final_delay_s": 2.74
+   },
+   "176.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.85,
+      "into_gap_frac_median": 0.038,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 73.86,
+    "final_delay_s": 1.49
+   },
+   "177.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.73,
+      "into_gap_frac_median": 0.024,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 80.28,
+    "final_delay_s": 1.96
+   },
+   "178.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.19,
+      "into_gap_frac_median": 0.008,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.8,
+    "final_delay_s": 1.0
+   },
+   "179.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 77.87,
+    "final_delay_s": 3.98
+   },
+   "180.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.32,
+      "into_gap_frac_median": 0.057,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.85,
+    "final_delay_s": 0.96
+   },
+   "181.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.78,
+      "into_gap_frac_median": 0.035,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 81.43,
+    "final_delay_s": 0.8
+   },
+   "182.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.26,
+      "into_gap_frac_median": 0.018,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 76.03,
+    "final_delay_s": 0.06
+   },
+   "183.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.94,
+      "into_gap_frac_median": 0.043,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.7,
+    "final_delay_s": 1.1
+   },
+   "184.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.69,
+      "into_gap_frac_median": 0.047,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.58,
+    "final_delay_s": 0.86
+   },
+   "185.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.08,
+      "into_gap_frac_median": 0.073,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.78,
+    "final_delay_s": 0.97
+   },
+   "186.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.88,
+      "into_gap_frac_median": 0.118,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 58.07,
+    "final_delay_s": 1.54
+   },
+   "187.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.38,
+      "into_gap_frac_median": 0.045,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.39,
+    "final_delay_s": null
+   },
+   "188.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.74,
+      "into_gap_frac_median": 0.184,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.43,
+    "final_delay_s": 0.78
+   },
+   "189.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 79.32,
+    "final_delay_s": 0.99
+   },
+   "190.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.52,
+      "into_gap_frac_median": 0.025,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 77.46,
+    "final_delay_s": 0.32
+   },
+   "191.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.18,
+      "into_gap_frac_median": 0.059,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.98,
+    "final_delay_s": 1.04
+   },
+   "192.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.39,
+      "into_gap_frac_median": 0.013,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 118.82,
+    "final_delay_s": 6.94
+   },
+   "193.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.56,
+      "into_gap_frac_median": 0.03,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.66,
+    "final_delay_s": 0.13
+   },
+   "194.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.89,
+      "into_gap_frac_median": 0.024,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 88.44,
+    "final_delay_s": 0.64
+   },
+   "195.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 21.04,
+      "into_gap_frac_median": 0.566,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 133.21,
+    "final_delay_s": 0.16
+   },
+   "196.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<2s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.96,
+      "into_gap_frac_median": 0.54,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.89,
+      "into_gap_frac_median": 0.025,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 93.74,
+    "final_delay_s": 0.52
+   },
+   "197.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.72,
+      "into_gap_frac_median": 0.293,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.95,
+    "final_delay_s": 1.13
+   },
+   "198.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.96,
+      "into_gap_frac_median": 0.1,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.13,
+    "final_delay_s": 1.06
+   },
+   "199.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.78,
+      "into_gap_frac_median": 0.198,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.12,
+    "final_delay_s": 3.74
+   },
+   "200.wav": {
+    "gaps": 4,
+    "premature": 1,
+    "premature_rate": 0.25,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 3,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 8.11,
+      "into_gap_frac_median": 0.517,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 59.36,
+    "final_delay_s": 3.13
+   },
+   "201.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.68,
+      "into_gap_frac_median": 0.039,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.65,
+    "final_delay_s": 0.87
+   },
+   "202.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.03,
+      "into_gap_frac_median": 0.041,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 73.13,
+    "final_delay_s": 0.91
+   },
+   "203.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.59,
+      "into_gap_frac_median": 0.015,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 105.61,
+    "final_delay_s": 0.98
+   },
+   "204.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.07,
+      "into_gap_frac_median": 0.048,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.72,
+    "final_delay_s": 1.41
+   },
+   "205.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.02,
+      "into_gap_frac_median": 0.051,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 103.77,
+    "final_delay_s": 0.45
+   },
+   "206.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.36,
+      "into_gap_frac_median": 0.063,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.82,
+    "final_delay_s": 0.65
+   },
+   "207.wav": {
+    "gaps": 3,
+    "premature": 2,
+    "premature_rate": 0.667,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.89,
+      "into_gap_frac_median": 0.096,
+      "declared_rate": 1.0
+     },
+     "<5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.77,
+      "into_gap_frac_median": 0.22,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 78.14,
+    "final_delay_s": 0.57
+   },
+   "208.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.9,
+      "into_gap_frac_median": 0.05,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 69.51,
+    "final_delay_s": 0.85
+   },
+   "209.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.77,
+      "into_gap_frac_median": 0.039,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 70.65,
+    "final_delay_s": 1.24
+   },
+   "210.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 16.99,
+      "into_gap_frac_median": 0.882,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 60.72,
+    "final_delay_s": 0.9
+   },
+   "211.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.99,
+      "into_gap_frac_median": 0.076,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.36,
+    "final_delay_s": 1.09
+   },
+   "212.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.02,
+      "into_gap_frac_median": 0.084,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 53.84,
+    "final_delay_s": 1.04
+   },
+   "213.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.83,
+      "into_gap_frac_median": 0.064,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 56.99,
+    "final_delay_s": 1.59
+   },
+   "214.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.12,
+      "into_gap_frac_median": 0.08,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.27,
+    "final_delay_s": 1.04
+   },
+   "215.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.71,
+      "into_gap_frac_median": 0.018,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 99.58,
+    "final_delay_s": 1.63
+   },
+   "216.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.73,
+      "into_gap_frac_median": 0.018,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 101.68,
+    "final_delay_s": 1.0
+   },
+   "217.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.66,
+      "into_gap_frac_median": 0.05,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 55.61,
+    "final_delay_s": 0.8
+   },
+   "218.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.84,
+      "into_gap_frac_median": 0.044,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.12,
+    "final_delay_s": 0.45
+   },
+   "219.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.15,
+      "into_gap_frac_median": 0.07,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 59.24,
+    "final_delay_s": 0.88
+   },
+   "220.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.02,
+      "into_gap_frac_median": 0.244,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.88,
+    "final_delay_s": 0.58
+   },
+   "221.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.95,
+      "into_gap_frac_median": 0.053,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 58.19,
+    "final_delay_s": 0.91
+   },
+   "222.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.51,
+      "into_gap_frac_median": 0.071,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 61.06,
+    "final_delay_s": 0.82
+   },
+   "223.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.53,
+      "into_gap_frac_median": 0.052,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.07,
+    "final_delay_s": 0.34
+   },
+   "224.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.21,
+      "into_gap_frac_median": 0.005,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 90.16,
+    "final_delay_s": 0.2
+   },
+   "225.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.7,
+      "into_gap_frac_median": 0.028,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.64,
+    "final_delay_s": 0.83
+   },
+   "226.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.97,
+      "into_gap_frac_median": 0.043,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.9,
+    "final_delay_s": 0.79
+   },
+   "227.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.68,
+      "into_gap_frac_median": 0.029,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.25,
+    "final_delay_s": 3.46
+   },
+   "228.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.21,
+      "into_gap_frac_median": 0.01,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 86.92,
+    "final_delay_s": 0.62
+   },
+   "229.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.46,
+      "into_gap_frac_median": 0.076,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 98.36,
+    "final_delay_s": 0.93
+   },
+   "230.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.14,
+      "into_gap_frac_median": 0.39,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 99.03,
+    "final_delay_s": 0.68
+   },
+   "231.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.81,
+      "into_gap_frac_median": 0.045,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.9,
+    "final_delay_s": 0.76
+   },
+   "232.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.88,
+      "into_gap_frac_median": 0.068,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 62.65,
+    "final_delay_s": 0.39
+   },
+   "233.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<1s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.63,
+      "into_gap_frac_median": 0.032,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.74,
+    "final_delay_s": 0.74
+   },
+   "234.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.01,
+      "into_gap_frac_median": 0.045,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 80.33,
+    "final_delay_s": 0.88
+   },
+   "235.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.74,
+      "into_gap_frac_median": 0.04,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 95.55,
+    "final_delay_s": 0.22
+   },
+   "236.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.15,
+      "into_gap_frac_median": 0.116,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 71.22,
+    "final_delay_s": 1.0
+   },
+   "237.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.81,
+      "into_gap_frac_median": 0.03,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.26,
+    "final_delay_s": 0.91
+   },
+   "238.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.91,
+      "into_gap_frac_median": 0.034,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.73,
+    "final_delay_s": 3.23
+   },
+   "239.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.78,
+      "into_gap_frac_median": 0.022,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 102.89,
+    "final_delay_s": 1.77
+   },
+   "240.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.35,
+      "into_gap_frac_median": 0.041,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.63,
+    "final_delay_s": 1.02
+   },
+   "241.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 7.39,
+      "into_gap_frac_median": 0.339,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 92.88,
+    "final_delay_s": 1.96
+   },
+   "242.wav": {
+    "gaps": 2,
+    "premature": 2,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.11,
+      "into_gap_frac_median": 0.325,
+      "declared_rate": 1.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 5.25,
+      "into_gap_frac_median": 0.275,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 87.29,
+    "final_delay_s": 2.82
+   },
+   "243.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.44,
+      "into_gap_frac_median": 0.039,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 81.75,
+    "final_delay_s": 1.28
+   },
+   "244.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 2.78,
+      "into_gap_frac_median": 0.079,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 87.82,
+    "final_delay_s": 1.01
+   },
+   "245.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.96,
+      "into_gap_frac_median": 0.032,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 108.84,
+    "final_delay_s": 1.23
+   },
+   "246.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 3.15,
+      "into_gap_frac_median": 0.121,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.1,
+    "final_delay_s": 2.91
+   },
+   "247.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.62,
+      "into_gap_frac_median": 0.015,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 91.24,
+    "final_delay_s": 1.11
+   },
+   "248.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.83,
+      "into_gap_frac_median": 0.04,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 74.13,
+    "final_delay_s": 1.39
+   },
+   "249.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.99,
+      "into_gap_frac_median": 0.05,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 74.16,
+    "final_delay_s": 0.65
+   },
+   "250.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 75.59,
+    "final_delay_s": 1.59
+   },
+   "251.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 6.24,
+      "into_gap_frac_median": 0.296,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 82.08,
+    "final_delay_s": 1.11
+   },
+   "252.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.79,
+      "into_gap_frac_median": 0.025,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.97,
+    "final_delay_s": 0.91
+   },
+   "253.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.76,
+      "into_gap_frac_median": 0.026,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 95.12,
+    "final_delay_s": 0.69
+   },
+   "254.wav": {
+    "gaps": 2,
+    "premature": 0,
+    "premature_rate": 0.0,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     }
+    },
+    "final_end_s": 82.06,
+    "final_delay_s": 3.08
+   },
+   "255.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.79,
+      "into_gap_frac_median": 0.05,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 64.32,
+    "final_delay_s": 0.89
+   },
+   "256.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.68,
+      "into_gap_frac_median": 0.026,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 75.46,
+    "final_delay_s": 0.66
+   },
+   "257.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.6,
+      "into_gap_frac_median": 0.069,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 89.6,
+    "final_delay_s": 0.66
+   },
+   "258.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.93,
+      "into_gap_frac_median": 0.034,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 96.65,
+    "final_delay_s": 1.17
+   },
+   "259.wav": {
+    "gaps": 1,
+    "premature": 1,
+    "premature_rate": 1.0,
+    "by_bucket": {
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.74,
+      "into_gap_frac_median": 0.067,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 79.13,
+    "final_delay_s": 10.97
+   },
+   "260.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.5,
+      "into_gap_frac_median": 0.026,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 60.84,
+    "final_delay_s": 1.14
+   },
+   "261.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 1.02,
+      "into_gap_frac_median": 0.039,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 68.34,
+    "final_delay_s": 1.12
+   },
+   "262.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.87,
+      "into_gap_frac_median": 0.027,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 72.97,
+    "final_delay_s": 1.04
+   },
+   "263.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 9.62,
+      "into_gap_frac_median": 0.391,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 67.08,
+    "final_delay_s": 0.66
+   },
+   "264.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.9,
+      "into_gap_frac_median": 0.05,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 65.9,
+    "final_delay_s": 1.52
+   },
+   "265.wav": {
+    "gaps": 2,
+    "premature": 1,
+    "premature_rate": 0.5,
+    "by_bucket": {
+     "<0.5s": {
+      "gaps": 1,
+      "declared": 0,
+      "into_gap_s_median": null,
+      "into_gap_frac_median": null,
+      "declared_rate": 0.0
+     },
+     ">=5s": {
+      "gaps": 1,
+      "declared": 1,
+      "into_gap_s_median": 0.89,
+      "into_gap_frac_median": 0.047,
+      "declared_rate": 1.0
+     }
+    },
+    "final_end_s": 69.08,
+    "final_delay_s": 0.74
+   }
+  }
+ }
+}

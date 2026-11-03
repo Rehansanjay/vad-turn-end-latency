@@ -223,9 +223,12 @@ clip rather than four: `focus=True, cue=True` returns the filtered audio and Cue
 together, so the filtered audio is computed once and the Silero pass reuses it. Each condition is
 scored against the audio its own VAD heard, so the RMS control describes what the VAD got.
 
-`phone_calls` is fed **as-is at its stored 32 kHz** on the maintainer's instruction: the core
-resamples everything to 16 kHz before Focus and Cue anyway, and as-is is what a LiveKit agent sees
-on a SIP call — phone content at the session rate.
+**Correction.** An earlier version of this section said `phone_calls` was fed as-is at its stored
+32 kHz, which is what the maintainer asked for. It was not: `alkove_bench.py` loads every split
+through `load_16k`, which resamples to 16 kHz, and the results files record `sample_rate: 16000`
+accordingly. The practical effect should be nil — his reasoning for allowing as-is was that the core
+resamples everything to 16 kHz before Focus and Cue regardless — but the run did not do what the
+text claimed, so the text was wrong rather than the result.
 
 ### Primary recall: the metric a filter cannot game
 
@@ -326,6 +329,91 @@ That is 0.3.3 doing what it was built for: it checks the power above ~4.6 kHz an
 empty, fills it with faint noise. Silero needs none of it — the right-hand column is its unfiltered
 recall on the same files. **So Silero is robust to band-limiting and Cue is not**, and on this split
 Focus *costs* Silero: files below 0.8 recall go from 1 to 6.
+
+## Measured: Cue's end-of-turn head
+
+alkove 0.4.0 gives Cue a turn head. Its maintainer asked for a re-run on the same
+265 files, with the two numbers the first run could not produce: when the turn is
+declared against the labelled end, and how often the caller is cut off. He also
+named the baseline -- the VAD-only endpointing a LiveKit agent does today.
+
+`speech` output is bit-identical to 0.3.3, so the recall and background numbers
+above stand unchanged. Only the turn decision is new here.
+
+| condition | what it is |
+| --- | --- |
+| silero | `alkove` not involved: Silero's speech end, plus `min_silence` 0.55s, plus `min_delay` 0.5s |
+| raw -> Cue | `alkove.Turns(models, rate)` |
+| **Focus -> Cue** | **`alkove.Live(models, rate, turn=True)`** |
+
+Scored on `at`, the decision timestamp, not `end`, which is the backdated end of
+speech the first run measured. Files are read at their own rate.
+
+### Dead air after the caller's last word
+
+| split | silero | raw -> Cue | Focus -> Cue |
+| --- | --- | --- | --- |
+| call_center (106) | 0.87s | 0.48s | **0.41s** |
+| work (96) | 0.98s | 0.38s | **0.27s** |
+| phone_calls (63) | 0.94s | 0.24s | **0.19s** |
+| **all 265** | **0.93s** | 0.37s | **0.25s** |
+
+**Cue removes roughly two thirds of the dead air**, consistently on every split,
+and most on the band-limited one. That is the result, and it is a large one: a
+caller on `phone_calls` waits 0.19s instead of 0.94s.
+
+### It is bought in the short pauses
+
+Scored on the gaps between the caller's labelled spans, bucketed by how long the
+caller actually paused. A decision in a long gap is a handover; one in a short
+gap took the floor mid-sentence.
+
+| pause length | silero | raw -> Cue | Focus -> Cue |
+| --- | --- | --- | --- |
+| under 0.5s (108) | **1%** | 20% | 21% |
+| 0.5 to 1s (16) | 12% | 56% | 62% |
+| over 5s (204) | **97%** | 93% | 85% |
+
+Silero almost never fires inside a breath. Cue does it in a fifth of them, and in
+over half of the half-second-to-second pauses. That is the cost of the speed
+above, and the two tables should be read together.
+
+### The finding that is not about latency
+
+| split | silero | raw -> Cue | Focus -> Cue |
+| --- | --- | --- | --- |
+| call_center (106) | 0 | 21 | 26 |
+| work (96) | 1 | 20 | **35** |
+| phone_calls (63) | 0 | 16 | 10 |
+| **total of 265** | **1** | 57 | **71** |
+
+**Focus -> Cue never declares a final turn at all on 71 files, 27% of the set.**
+Silero misses one. This is not a filter being slow, it is the end of the
+conversation going undetected, and on `work` it is more than a third of the
+clips. It also declares fewer of the long handovers -- 85% of gaps over five
+seconds against Silero's 97%, the same shape of problem.
+
+A turn detector that is three times faster when it fires, and silent on a
+quarter of calls, is a different trade from the headline number alone.
+
+### What this run does not establish
+
+- **`phone_calls` is testable for the first time**, since the metric no longer
+  depends on how the file ends -- but it holds **7 gaps in total**, so its
+  premature column is three fractions over seven and not a rate. Its final-delay
+  column rests on 47 to 63 files and is the strongest result in the set.
+- **One baseline, chosen.** The maintainer said "Silero's end + 0.5s
+  (`min_delay` default)". This uses the backdated end **plus** `min_silence`
+  0.55s **plus** `min_delay` 0.5s, on the reasoning that Silero only declares
+  end of speech after the silence has elapsed and the session waits after that,
+  so the sum is what a caller sits through. If the simpler reading was meant,
+  every silero number here is 0.55s too high.
+- **Default `TurnParams`** throughout: threshold 0.6, min_pause 0.3, max_pause
+  1.5, on his instruction to keep Cue-alone at defaults. No sweep was run.
+
+Raw output: [`results/turns_call_center.json`](results/turns_call_center.json),
+[`turns_work.json`](results/turns_work.json),
+[`turns_phone_calls.json`](results/turns_phone_calls.json).
 
 ### What this does not establish
 
